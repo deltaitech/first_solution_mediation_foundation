@@ -103,10 +103,11 @@
                         <div class="col form-group">
                             <label>{{ __('words.meta_description') }} - {{ __('words.locale-' . $locale) }}<span
                                     class="text-danger">*</span></label>
-                            <input class="form-control @error($locale . '.meta_description') is-invalid @enderror " type="text"
-                                   name="{{ $locale . '[meta_description]' }}" value="{{ old($locale . '.meta_description', $setting->translate($locale)->meta_description) }}" />
+                            <input class="form-control @error($locale . '.meta_description') is-invalid @enderror "
+                                type="text" name="{{ $locale . '[meta_description]' }}"
+                                value="{{ old($locale . '.meta_description', $setting->translate($locale)->meta_description) }}" />
                             @error($locale . '[meta_description]')
-                            <span class="invalid-feedback" role="alert">
+                                <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
@@ -167,30 +168,28 @@
 
             <div class="form-group row">
                 <div class="col form-group">
-                    <label>{{ __('words.map') }}<span
-                            class="text-danger">*</span></label>
+                    <label>{{ __('words.map') }}<span class="text-danger">*</span></label>
                     <input class="form-control @error('map') is-invalid @enderror " type="text"
-                              name="{{'map'}}" value="{{ old('map', $setting->map) }}" />
+                        name="{{ 'map' }}" value="{{ old('map', $setting->map) }}" />
                     @error('map')
-                    <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
                     @enderror
                 </div>
 
                 <div class="col form-group">
-                    <label>{{ __('words.contact_email') }}<span
-                            class="text-danger">*</span></label>
+                    <label>{{ __('words.contact_email') }}<span class="text-danger">*</span></label>
                     <input class="form-control @error('contact_email') is-invalid @enderror " type="email"
-                           name="{{'contact_email'}}" value="{{ old('contact_email', $setting->contact_email) }}"/>
+                        name="{{ 'contact_email' }}" value="{{ old('contact_email', $setting->contact_email) }}" />
                     @error('contact_email')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
                     @enderror
                 </div>
 
-                <div class="col form-group">
+                {{-- <div class="col form-group">
                     <label>{{ __('words.newsletter_email') }}<span
                             class="text-danger">*</span></label>
                     <input class="form-control @error('newsletter_email') is-invalid @enderror " type="email"
@@ -200,7 +199,7 @@
                         <strong>{{ $message }}</strong>
                     </span>
                     @enderror
-                </div>
+                </div> --}}
             </div>
             <div class="form-group row">
                 @include('admin.components.image', [
@@ -212,28 +211,28 @@
                 ])
 
                 @include('admin.components.image', [
-                   'label' => __('words.white_logo'),
-                   'value' => $setting->white_logo,
-                   'name' => 'white_logo',
-                   'id' => 'kt_image_2',
-                   'required' => false,
-               ])
+                    'label' => __('words.white_logo'),
+                    'value' => $setting->white_logo,
+                    'name' => 'white_logo',
+                    'id' => 'kt_image_2',
+                    'required' => false,
+                ])
 
                 @include('admin.components.image', [
-                   'label' => __('words.favicon'),
-                   'value' => $setting->favicon,
-                   'name' => 'favicon',
-                   'id' => 'kt_image_3',
-                   'required' => false,
-               ])
+                    'label' => __('words.favicon'),
+                    'value' => $setting->favicon,
+                    'name' => 'favicon',
+                    'id' => 'kt_image_3',
+                    'required' => false,
+                ])
 
-                @include('admin.components.image', [
+                {{-- @include('admin.components.image', [
                     'label' => __('words.contact_img'),
                     'value' => $setting->contact_img,
                     'name' => 'contact_img',
                     'id' => 'kt_image_4',
                     'required' => false,
-                ])
+                ]) --}}
 
                 @include('admin.components.image', [
                     'label' => __('words.footer_img'),
@@ -270,19 +269,19 @@
 
 @endsection
 
-{{--@section('scripts')--}}
-{{--    <script>--}}
-{{--        $("#form").submit(function(e) {--}}
-{{--            e.preventDefault();--}}
-{{--            let links = document.querySelectorAll('.link');--}}
-{{--            links.forEach(function(link) {--}}
-{{--                let position = link.value.includes('https');--}}
-{{--                if (position > -1) {--}}
-{{--                    let enhancedLink = link.value.replace("https://", "http://");--}}
-{{--                    link.value = enhancedLink;--}}
-{{--                }--}}
-{{--            });--}}
-{{--            this.submit();--}}
-{{--        });--}}
-{{--    </script>--}}
-{{--@endsection--}}
+{{-- @section('scripts') --}}
+{{--    <script> --}}
+{{--        $("#form").submit(function(e) { --}}
+{{--            e.preventDefault(); --}}
+{{--            let links = document.querySelectorAll('.link'); --}}
+{{--            links.forEach(function(link) { --}}
+{{--                let position = link.value.includes('https'); --}}
+{{--                if (position > -1) { --}}
+{{--                    let enhancedLink = link.value.replace("https://", "http://"); --}}
+{{--                    link.value = enhancedLink; --}}
+{{--                } --}}
+{{--            }); --}}
+{{--            this.submit(); --}}
+{{--        }); --}}
+{{--    </script> --}}
+{{-- @endsection --}}

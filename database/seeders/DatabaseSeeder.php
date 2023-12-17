@@ -19,6 +19,9 @@ class DatabaseSeeder extends Seeder
         $this->call(AdminSeeder::class);
         $this->call(SettingSeeder::class);
         $this->call(SettingContactSeeder::class);
-//        NewsLetter::factory(6000)->create();
+        $this->call(SliderSeeder::class);
+        $this->call(PageSeeder::class);
+        $this->call(FeatureSeeder::class);
+        //        NewsLetter::factory(6000)->create();
     }
 }

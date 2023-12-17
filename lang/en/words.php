@@ -50,6 +50,8 @@ return [
     "image" => "Image",
     "icon" => "Icon",
     "select_icon" => "Select Icon",
+    "choose_icon_image" => "Choose Icon Image From Here CLICK ME!",
+
 
     "roles" => "Roles",
     "show_roles" => "Show Roles",
@@ -129,6 +131,12 @@ return [
     "show_project" => "Show Project",
     "edit_project" => "Edit Project",
     "create_project" => "Create Project",
+
+    "features" => "Features",
+    "show_features" => "Show Features",
+    "show_feature" => "Show Feature",
+    "edit_feature" => "Edit Feature",
+    "create_feature" => "Create Feature",
 
     "teams" => "Teams",
     "show_teams" => "Show Team",
