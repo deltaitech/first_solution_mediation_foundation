@@ -1,0 +1,39 @@
+:root {
+    	/* main color */
+	--primaryColor: 0, 113, 188;
+	--primary: #0071bc;
+
+	/* secondary color */
+	--secondaryColor: 140, 198, 63;
+	--secondary: #8cc63f;
+
+	/* dark-blue color */
+	--darkGreyColor: 26, 26, 26;
+	--darkGrey: #1a1a1a;
+
+    /* description color */
+	--descriptionColor: 68, 68, 68;
+	--description: #444444;
+}
+
+:lang(ar) .page-breadcrumb li a .icon {
+    margin-right: unset;
+    margin-left: 4px;
+}
+
+:lang(ar) .page-breadcrumb li:after {
+    right: unset;
+    left: -5px;
+    transform: rotate(178deg);
+}
+
+:lang(ar) .page-breadcrumb li {
+    margin-right: unset;
+    padding-right: unset;
+    margin-left: 10px;
+    padding-left: 15px;
+}
+
+li.breadcrumb-item.active {
+    color: var(--secondary);
+}
