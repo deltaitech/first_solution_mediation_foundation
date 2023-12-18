@@ -80,6 +80,7 @@ return [
     "has_description" => "يوجد وصف",
     "has_image" => "يوجد صورة",
     "has_video" => "يوجد فيديو",
+    "has_title" => "يوجد عنوان",
     "video" => "فيديو",
     "link" => "رابط",
     "yes" => "نعم",

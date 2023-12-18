@@ -25,6 +25,34 @@ $(document).ready(function () {
               );
     });
 
+
+        /* ----------------------------- -Title Option ----------------------------- */
+    // Hide if there is no errors
+    $.each($('.title-container input[type="text"]'), function () {
+        if (
+            !$('input[name="has_title"]').is(":checked") &&
+            !$(this).hasClass("is-invalid")
+        )
+            $(".title-container").hide("fast");
+    });
+
+    // Toggle value on change
+    $('input[name="has_title"]').on("change", function () {
+        $(".title-container").toggle("slow");
+
+        // Update switch value within the $locale <div>
+        $(".tab-pane.active").attr("id") === "en"
+            ? $('#ar input[name="has_title"]').prop(
+                  "checked",
+                  $('#en input[name="has_title"]').is(":checked")
+              )
+            : $('#en input[name="has_title"]').prop(
+                  "checked",
+                  $('#ar input[name="has_title"]').is(":checked")
+              );
+    });
+
+
     /* ----------------------------- Description Option ----------------------------- */
     // Hide if there is no errors
     $.each($('.description-container textarea[type="text"]'), function () {

@@ -35,7 +35,7 @@
                     @foreach (config('translatable.locales') as $key => $locale)
                         <li class="nav-item">
                             <a class="nav-link  @if ($key == 0) active @endif" data-toggle="tab"
-                               href="{{ '#' . $locale }}">{{ __('words.locale-' . $locale) }}</a>
+                                href="{{ '#' . $locale }}">{{ __('words.locale-' . $locale) }}</a>
                         </li>
                     @endforeach
                 </ul>
@@ -45,21 +45,20 @@
             <div class="tab-content">
                 @foreach (config('translatable.locales') as $key => $locale)
                     <div class="tab-pane fade show @if ($key == 0) active @endif" id="{{ $locale }}"
-                         role="tabpanel">
-                        <div class="col form-group">
-                            <label>{{ __('words.title') }} - {{ __('words.locale-' . $locale) }}<span
-                                    class="text-danger">
+                        role="tabpanel">
+                        <div class="col form-group title-container">
+                            <label>{{ __('words.title') }} - {{ __('words.locale-' . $locale) }}<span class="text-danger">
                                     * </span></label>
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="flaticon-edit"></i></span>
                                 </div>
                                 <input type="text" name="{{ $locale . '[title]' }}"
-                                       placeholder="{{ __('words.title') }}"
-                                       class="form-control  pl-5 min-h-40px @error($locale . '.title') is-invalid @enderror"
-                                       value="{{ old($locale . '.title') }}">
+                                    placeholder="{{ __('words.title') }}"
+                                    class="form-control  pl-5 min-h-40px @error($locale . '.title') is-invalid @enderror"
+                                    value="{{ old($locale . '.title') }}">
                                 @error($locale . '[title]')
-                                <span class="invalid-feedback" role="alert">
+                                    <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
@@ -74,11 +73,11 @@
                                     <span class="input-group-text"><i class="flaticon-edit"></i></span>
                                 </div>
                                 <input type="text" name="{{ $locale . '[sub_title]' }}"
-                                       placeholder="{{ __('words.sub_title') }}"
-                                       class="form-control  pl-5 min-h-40px @error($locale . '.sub_title') is-invalid @enderror"
-                                       value="{{ old($locale . '.sub_title') }}">
+                                    placeholder="{{ __('words.sub_title') }}"
+                                    class="form-control  pl-5 min-h-40px @error($locale . '.sub_title') is-invalid @enderror"
+                                    value="{{ old($locale . '.sub_title') }}">
                                 @error($locale . '[sub_title]')
-                                <span class="invalid-feedback" role="alert">
+                                    <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
@@ -88,13 +87,10 @@
                         <div class="col form-group description-container">
                             <label>{{ __('words.description') }}({{ __('words.locale-' . $locale) }})<span
                                     class="text-danger">*</span></label>
-                            <textarea
-                                class="form-control ckeditor @error($locale . '.description') is-invalid @enderror "
-                                type="text"
-                                name="{{ $locale . '[description]' }}"
-                                rows="4">{{ old($locale . '.description') }} </textarea>
+                            <textarea class="form-control ckeditor @error($locale . '.description') is-invalid @enderror " type="text"
+                                name="{{ $locale . '[description]' }}" rows="4">{{ old($locale . '.description') }} </textarea>
                             @error($locale . '[description]')
-                            <span class="invalid-feedback" role="alert">
+                                <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
@@ -107,162 +103,182 @@
 
     <div class="card card-custom">
         <div class="card-body">
-           <div class="container-fluid">
-               <div class="row">
-                   {{-- Has Subtitle start --}}
-                   <div class="col form-group">
-                       <div class="form-check">
-                           <input class="form-check-input" type="checkbox" name="has_sub_title" value="1"
-                                  {{old('has_sub_title') ? "checked" : ""}} id="has_sub_title">
-                           @error('has_sub_title')
-                           <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                           @enderror
-                           <label class="form-check-label" for="flexCheckDefault">
-                               {{ __('words.has_sub_title') }}
-                           </label>
-                       </div>
-                   </div>
-                   {{-- Has Subtitle end --}}
+            <div class="container-fluid">
+                <div class="row">
+                    {{-- Has title start --}}
+                    <div class="col form-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="has_title" value="1"
+                                {{ old('has_title') ? 'checked' : '' }} id="has_title">
+                            @error('has_title')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                            <label class="form-check-label" for="flexCheckDefault">
+                                {{ __('words.has_title') }}
+                            </label>
+                        </div>
+                    </div>
+                    {{-- Has title end --}}
 
-                   {{-- Has discreption start --}}
-                   <div class="col form-group">
-                       <div class="form-check">
-                           <input class="form-check-input" type="checkbox" name="has_description" value="1"
-                                  {{old('has_description') ? "checked" : ""}} id="has_description">
-                           @error('has_description')
-                           <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                           @enderror
-                           <label class="form-check-label" for="flexCheckDefault">
-                               {{ __('words.has_description') }}
-                           </label>
-                       </div>
-                   </div>
-                   {{-- Has discreption end --}}
+                    {{-- Has Subtitle start --}}
+                    <div class="col form-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="has_sub_title" value="1"
+                                {{ old('has_sub_title') ? 'checked' : '' }} id="has_sub_title">
+                            @error('has_sub_title')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                            <label class="form-check-label" for="flexCheckDefault">
+                                {{ __('words.has_sub_title') }}
+                            </label>
+                        </div>
+                    </div>
+                    {{-- Has Subtitle end --}}
 
-                   {{-- Has link start --}}
-                   <div class="col form-group">
-                       <div class="form-check">
-                           <input class="form-check-input" type="checkbox" name="has_link" value="1" {{old('has_link') ? "checked" : ""}} id="has_link">
-                           @error('has_link')
-                           <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                           @enderror
-                           <label class="form-check-label" for="has_link">
-                               {{ __('words.has_link') }}
-                           </label>
-                       </div>
-                   </div>
-                   {{-- Has link end --}}
+                    {{-- Has discreption start --}}
+                    <div class="col form-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="has_description" value="1"
+                                {{ old('has_description') ? 'checked' : '' }} id="has_description">
+                            @error('has_description')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                            <label class="form-check-label" for="flexCheckDefault">
+                                {{ __('words.has_description') }}
+                            </label>
+                        </div>
+                    </div>
+                    {{-- Has discreption end --}}
 
-                   {{-- Has video start --}}
-                   <div class="col form-group">
-                       <div class="form-check">
-                           <input class="form-check-input" type="checkbox" name="has_video" value="1" {{old('has_video') ? "checked" : ""}} id="has_video">
-                           @error('has_video')
-                           <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                           @enderror
-                           <label class="form-check-label" for="has_video">
-                               {{ __('words.has_video') }}
-                           </label>
-                       </div>
-                   </div>
-                   {{-- Has video start --}}
+                    {{-- Has link start --}}
+                    <div class="col form-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="has_link" value="1"
+                                {{ old('has_link') ? 'checked' : '' }} id="has_link">
+                            @error('has_link')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                            <label class="form-check-label" for="has_link">
+                                {{ __('words.has_link') }}
+                            </label>
+                        </div>
+                    </div>
+                    {{-- Has link end --}}
 
-                   {{-- Has image start --}}
-                   <div class="col form-group">
-                       <div class="form-check">
-                           <input class="form-check-input" type="checkbox" name="has_image" value="1" {{old('has_image') ? "checked" : ""}} id="has_image">
-                           @error('has_image')
-                           <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                           @enderror
-                           <label class="form-check-label" for="has_image">
-                               {{ __('words.has_image') }}
-                           </label>
-                       </div>
-                   </div>
-                   {{-- Has image start --}}
-               </div>
-               <div class="row">
-                   {{-- identifier start --}}
-                   <div class="col form-group">
-                       <label>{{ __('words.identifier') }}<span class="text-danger"> * </span></label>
-                       <div class="input-group">
-                           <div class="input-group-prepend">
-                               <span class="input-group-text"><i class="flaticon-edit"></i></span>
-                           </div>
-                           <input type="text" name="{{ 'identifier' }}" placeholder="{{ __('words.identifier') }}"
-                                  class="form-control  pl-5 min-h-40px @error('identifier') is-invalid @enderror"
-                                  value="{{ old('identifier') }}">
-                           @error('[identifier]')
-                           <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                           @enderror
-                       </div>
-                   </div>
-                   {{-- identifier end --}}
+                    {{-- Has video start --}}
+                    <div class="col form-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="has_video" value="1"
+                                {{ old('has_video') ? 'checked' : '' }} id="has_video">
+                            @error('has_video')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                            <label class="form-check-label" for="has_video">
+                                {{ __('words.has_video') }}
+                            </label>
+                        </div>
+                    </div>
+                    {{-- Has video start --}}
 
-                   {{-- link start --}}
-                   <div class="col form-group" id="link-container">
-                       <label>{{ __('words.link') }}<span class="text-danger"></span></label>
-                       <div class="input-group">
-                           <div class="input-group-prepend">
-                               <span class="input-group-text"><i class="flaticon-edit"></i></span>
-                           </div>
-                           <input type="text" name="{{ 'link' }}" placeholder="{{ __('words.link') }}"
-                                  class="form-control  pl-5 min-h-40px @error('link') is-invalid @enderror"
-                                  value="{{ old('link') }}">
-                           @error('[link]')
-                           <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                           @enderror
-                       </div>
-                   </div>
-                   {{-- link end --}}
+                    {{-- Has image start --}}
+                    <div class="col form-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="has_image" value="1"
+                                {{ old('has_image') ? 'checked' : '' }} id="has_image">
+                            @error('has_image')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                            <label class="form-check-label" for="has_image">
+                                {{ __('words.has_image') }}
+                            </label>
+                        </div>
+                    </div>
+                    {{-- Has image start --}}
+                </div>
+                <div class="row">
+                    {{-- identifier start --}}
+                    <div class="col form-group">
+                        <label>{{ __('words.identifier') }}<span class="text-danger"> * </span></label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="flaticon-edit"></i></span>
+                            </div>
+                            <input type="text" name="{{ 'identifier' }}" placeholder="{{ __('words.identifier') }}"
+                                class="form-control  pl-5 min-h-40px @error('identifier') is-invalid @enderror"
+                                value="{{ old('identifier') }}">
+                            @error('[identifier]')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                    </div>
+                    {{-- identifier end --}}
 
-                   {{-- video start --}}
-                   <div class="col form-group" id="video-container">
-                       <label>{{ __('words.video') }}<span class="text-danger"></span></label>
-                       <div class="input-group">
-                           <div class="input-group-prepend">
-                               <span class="input-group-text"><i class="flaticon-edit"></i></span>
-                           </div>
-                           <input type="text" name="{{ 'video' }}" placeholder="{{ __('words.video') }}"
-                                  class="form-control  pl-5 min-h-40px @error('video') is-invalid @enderror"
-                                  value="{{ old('video') }}">
-                           @error('[video]')
-                           <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                           @enderror
-                       </div>
-                   </div>
-                   {{-- video end --}}
-               </div>
+                    {{-- link start --}}
+                    <div class="col form-group" id="link-container">
+                        <label>{{ __('words.link') }}<span class="text-danger"></span></label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="flaticon-edit"></i></span>
+                            </div>
+                            <input type="text" name="{{ 'link' }}" placeholder="{{ __('words.link') }}"
+                                class="form-control  pl-5 min-h-40px @error('link') is-invalid @enderror"
+                                value="{{ old('link') }}">
+                            @error('[link]')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                    </div>
+                    {{-- link end --}}
 
-               <div class="row">
-                      <div class="col" id="image_container">
-                          @include('admin.components.image', [
-                          'label' => __('words.image'),
-                          'value' => old('image'),
-                          'name' => 'image',
-                          'id' => 'kt_image_5',
-                          'required' => false,
-                      ])
-                      </div>
+                    {{-- video start --}}
+                    <div class="col form-group" id="video-container">
+                        <label>{{ __('words.video') }}<span class="text-danger"></span></label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="flaticon-edit"></i></span>
+                            </div>
+                            <input type="text" name="{{ 'video' }}" placeholder="{{ __('words.video') }}"
+                                class="form-control  pl-5 min-h-40px @error('video') is-invalid @enderror"
+                                value="{{ old('video') }}">
+                            @error('[video]')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                    </div>
+                    {{-- video end --}}
+                </div>
 
-               </div>
-           </div>
+                <div class="row">
+                    <div class="col" id="image_container">
+                        @include('admin.components.image', [
+                            'label' => __('words.image'),
+                            'value' => old('image'),
+                            'name' => 'image',
+                            'id' => 'kt_image_5',
+                            'required' => false,
+                        ])
+                    </div>
+
+                </div>
+            </div>
 
         </div>
 

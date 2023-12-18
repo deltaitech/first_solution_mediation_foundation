@@ -78,6 +78,7 @@ return [
     "has_description" => "Has Description",
     "has_image" => "Has Image",
     "has_video" => "Has Video",
+    "has_title" => "Has Title",
     "video" => "Video",
     "link" => "Link",
     "yes" => "Yes",

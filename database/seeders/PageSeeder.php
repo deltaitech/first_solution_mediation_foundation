@@ -15,9 +15,10 @@ class PageSeeder extends Seeder
      */
     public function run()
     {
-        //about us page Homepage
+        //about us page
         $page = Page::create([
             "identifier" => "about_us",
+            "has_title" => 1,
             "has_sub_title" => 0,
             "has_description" => 1,
             "has_link" => 0,
@@ -39,9 +40,10 @@ class PageSeeder extends Seeder
         ]);
 
 
-        //vision page Homepage
+        //vision page
         $page = Page::create([
             "identifier" => "vision",
+            "has_title" => 1,
             "has_sub_title" => 0,
             "has_description" => 1,
             "has_link" => 0,
@@ -64,9 +66,10 @@ class PageSeeder extends Seeder
 
 
 
-        //message page Homepage
+        //message page
         $page = Page::create([
             "identifier" => "message",
+            "has_title" => 1,
             "has_sub_title" => 0,
             "has_description" => 1,
             "has_link" => 0,
@@ -89,9 +92,10 @@ class PageSeeder extends Seeder
         ]);
 
 
-        //goals page Homepage
+        //goals page
         $page = Page::create([
             "identifier" => "goals",
+            "has_title" => 1,
             "has_sub_title" => 0,
             "has_description" => 1,
             "has_link" => 0,
@@ -109,6 +113,29 @@ class PageSeeder extends Seeder
 
         $page->file()->create([
             "path" => "seeders/pages/goals.jpg",
+            "type" => "image",
+        ]);
+
+
+        //separator page
+        $page = Page::create([
+            "identifier" => "goals",
+            "has_title" => 0,
+            "has_sub_title" => 0,
+            "has_description" => 1,
+            "has_link" => 0,
+            "has_video" => 0,
+            "has_image" => 1,
+            "ar" => [
+                "description" => "<p>أفضل شركة تمويل عقاري في المملكة العربية السعودية ... أطلب استشارة مجانية الآن</p>",
+            ],
+            "en" => [
+                "description" => "<p>The best real estate financing company in the Kingdom of Saudi Arabia... Request a free consultation now</p>",
+            ],
+        ]);
+
+        $page->file()->create([
+            "path" => "seeders/pages/separator.jpg",
             "type" => "image",
         ]);
     }

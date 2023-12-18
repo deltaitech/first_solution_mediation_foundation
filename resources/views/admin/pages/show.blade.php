@@ -30,7 +30,7 @@
                     @foreach (config('translatable.locales') as $key => $locale)
                         <li class="nav-item">
                             <a class="nav-link  @if ($key == 0) active @endif" data-toggle="tab"
-                               href="{{ '#' . $locale }}">{{ __('words.locale-' . $locale) }}</a>
+                                href="{{ '#' . $locale }}">{{ __('words.locale-' . $locale) }}</a>
                         </li>
                     @endforeach
                 </ul>
@@ -40,17 +40,19 @@
             <div class="tab-content">
                 @foreach (config('translatable.locales') as $key => $locale)
                     <div class="tab-pane fade show @if ($key == 0) active @endif" id="{{ $locale }}"
-                         role="tabpanel">
+                        role="tabpanel">
                         <div class="row mb-3">
-                            <div class="col-md-6">
-                                <div class="mb-7 bg-light p-5 rounded h-100">
-                                    <div class="card-title">
-                                        <h5 class="font-weight-bolder text-dark">{{ __('words.title') }}
-                                            - {{ __('words.locale-' . $locale) }}:</h5>
+                            @if ($page->title == true)
+                                <div class="col-md-6">
+                                    <div class="mb-7 bg-light p-5 rounded h-100">
+                                        <div class="card-title">
+                                            <h5 class="font-weight-bolder text-dark">{{ __('words.title') }}
+                                                - {{ __('words.locale-' . $locale) }}:</h5>
+                                        </div>
+                                        <p class="m-0">{{ $page->translate($locale)->title }}</p>
                                     </div>
-                                    <p class="m-0">{{ $page->translate($locale)->title }}</p>
                                 </div>
-                            </div>
+                            @endif
 
                             @if ($page->has_sub_title == true)
                                 <div class="col-md-6">
@@ -92,7 +94,8 @@
                                 <div class="card-title">
                                     <h5 class="font-weight-bolder text-dark">{{ __('words.link') }}:</h5>
                                 </div>
-                                <p class="m-0"><a href="{{ $page->link }}" target="_blank">{{ $page->link }}</a></p>
+                                <p class="m-0"><a href="{{ $page->link }}" target="_blank">{{ $page->link }}</a>
+                                </p>
                             </div>
                         </div>
                     @endif
@@ -103,7 +106,8 @@
                                 <div class="card-title">
                                     <h5 class="font-weight-bolder text-dark">{{ __('words.video') }}:</h5>
                                 </div>
-                                <p class="m-0"><a href="{{ $page->video }}" target="_blank">{{ $page->video }}</a></p>
+                                <p class="m-0"><a href="{{ $page->video }}" target="_blank">{{ $page->video }}</a>
+                                </p>
                             </div>
                         </div>
                     @endif
@@ -132,11 +136,10 @@
                 @if ($page->has_image == true)
                     <div class="row">
                         <div class="col-8">
-                            <a href="{{$page->image}}"
-                               data-toggle="lightbox" data-title="{{$page->title}}"
-                               data-gallery="gallery">
+                            <a href="{{ $page->image }}" data-toggle="lightbox" data-title="{{ $page->title }}"
+                                data-gallery="gallery">
                                 <img src="{{ $page->image }}" class="img-fluid mb-2 image-galley"
-                                     onerror="this.src='{{ asset('uploads/default_image.png') }}'" alt="page image"/>
+                                    onerror="this.src='{{ asset('uploads/default_image.png') }}'" alt="page image" />
                             </a>
                         </div>
                     </div>
@@ -144,15 +147,15 @@
             </div>
 
             @permission('update-pages')
-            <div class="card-footer">
-                <div class="row">
-                    <div class="col-4">
-                        <a href="{{ route('pages.edit', $page->id) }}" class="btn btn-block btn-outline-info">
-                            {{ __('words.edit') }}
-                        </a>
+                <div class="card-footer">
+                    <div class="row">
+                        <div class="col-4">
+                            <a href="{{ route('pages.edit', $page->id) }}" class="btn btn-block btn-outline-info">
+                                {{ __('words.edit') }}
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
             @endpermission
         </div>
     </div>

@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
         $this->call(PageSeeder::class);
         $this->call(FeatureSeeder::class);
         $this->call(PartnerSeeder::class);
+        $this->call(ServiceSeeder::class);
         //        NewsLetter::factory(6000)->create();
     }
 }
