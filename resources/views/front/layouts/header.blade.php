@@ -82,6 +82,13 @@
             integrity="sha512-b2QcS5SsA8tZodcDtGRELiGv5SaKSk1vDHDaQRda0htPYWZ6046lr3kJ5bAAQdpV2mmA/4v0wQF9MyU6/pDIAg=="
             crossorigin="anonymous" referrerpolicy="no-referrer" />
     @endif
+
+    {{-- font-awesome - v5.15.4 --}}
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <!-- Style Sheet -->
     <link href="vendor/css/elements.css" rel="stylesheet">
 
@@ -106,7 +113,7 @@
             <div class="container round-nav">
                 <a href="index-corporate-finance.html" title="Logo" class="logo scroll">
                     <!--Logo Default-->
-                    <img src="{{ asset('front/images/logo.png') }}" alt="logo" class="ml-lg-3 m-0">
+                    <img src="{{ settings()->logo }}" alt="logo" class="ml-lg-3 m-0">
                 </a>
 
                 <!--Nav Links-->
