@@ -85,6 +85,8 @@ return [
     "no" => "No",
     "import" => "Import",
     "export" => "Export",
+    "read_more" => "Read More",
+
 
     "show_masters" => "Show All Master Data",
     "show_master" => "Show Master Data",

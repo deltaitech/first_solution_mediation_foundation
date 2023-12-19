@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Models\Feature;
+use App\Models\Page;
 use App\Models\Slider;
 use Illuminate\Http\Request;
 
@@ -10,8 +12,8 @@ class HomepageController extends Controller
 {
 
     private $slider;
-    // private $page;
-    // private $solution;
+    private $page;
+    private $feature;
     // private $process;
     // private $service;
     // private $teamValue;
@@ -20,16 +22,16 @@ class HomepageController extends Controller
 
     public function __construct(
         Slider $slider,
-        // Page $page,
-        // Solution $solution,
+        Page $page,
+        Feature $feature,
         // Process $process,
         // Service $service,
         // TeamValue $teamValue,
         // Contact $contact,
     ) {
         $this->slider      = $slider;
-        // $this->page        = $page;
-        // $this->solution    = $solution;
+        $this->page        = $page;
+        $this->feature    = $feature;
         // $this->process     = $process;
         // $this->service     = $service;
         // $this->teamValue   = $teamValue;
@@ -40,9 +42,9 @@ class HomepageController extends Controller
     {
         try {
             $sliders                 = $this->slider->active()->latest('id')->get();
-            // $about_us                = $this->page->where('identifier', 'about_us')->first();
+            $about_us                = $this->page->where('identifier', 'about_us')->first();
+            $features               = $this->feature->active()->latest('id')->get();
             // $solutions_page          = $this->page->where('identifier', 'solutions')->first();
-            // $solutions               = $this->solution->active()->latest('id')->get();
             // $separator_1             = $this->page->where('identifier', 'separator_1')->first();
             // $processes               = $this->process->active()->latest('id')->get();
             // $process                 = $this->page->where('identifier', 'process')->first();
@@ -55,9 +57,9 @@ class HomepageController extends Controller
             // return view('front.index');
             return view('front.index', compact(
                 'sliders',
-                // 'about_us',
+                'about_us',
                 // 'solutions_page',
-                // 'solutions',
+                'features',
                 // 'separator_1',
                 // 'processes',
                 // 'process',

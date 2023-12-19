@@ -90,7 +90,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Style Sheet -->
-    <link href="vendor/css/elements.css" rel="stylesheet">
+    <link href="{{ asset('front/vendor/css/elements.css') }}" rel="stylesheet">
 
     <link href="{{ asset('front/css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('front/css/custom.css') }}" rel="stylesheet">
@@ -135,8 +135,8 @@
 
                         {{-- <a class="nav-link scroll line" href="#blog">Blog</a> --}}
 
-                        {{-- <a href="" class="btn btn-large btn-rounded btn-green btn-hvr-up btn-hvr-blue"
-                            data-animation-duration="500" data-fancybox data-src="#animatedModal">Get Started Now</a> --}}
+                        <a href="" class="btn btn-large btn-rounded btn-green btn-hvr-up btn-hvr-blue"
+                            data-animation-duration="500" data-fancybox data-src="#animatedModal">Get Started Now</a>
 
                         {{-- Language Toggler --}}
                         <li class="nav-item language-toggler">
