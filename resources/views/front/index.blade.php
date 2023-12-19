@@ -10,7 +10,7 @@
 
     @include('front.components.about')
 
-    @include('front.components.charts')
+    {{-- @include('front.components.charts') --}}
 
     @include('front.components.services')
 

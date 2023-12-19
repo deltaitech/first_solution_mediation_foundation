@@ -86,6 +86,8 @@ return [
     "import" => "Import",
     "export" => "Export",
     "read_more" => "Read More",
+    "request_consultation" => "Free Consultation",
+    "our_feature" => "Our Features",
 
 
     "show_masters" => "Show All Master Data",

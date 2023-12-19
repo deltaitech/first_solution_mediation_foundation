@@ -25,6 +25,7 @@
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif !important;
 }
 
 :lang(ar) * {
@@ -296,7 +297,10 @@ section.about {
 }
 
 .about-box:hover {
-	background-color: var(--secondary) !important;
+	background-color: rgba(var(--primaryColor), 0.5) !important;
+	background-color: rgba(var(--secondaryColor), 0.5) !important;
+	/* background-color: var(--secondary) !important; */
+	/* background-color: #0f6175 !important; */
 }
 
 .about-box h5 {
@@ -342,6 +346,7 @@ section.services-sec {
 
 .ui-block-32.about .heading-area .title {
 	font-size: 2.5rem;
+	color: var(--darkGrey);
 }
 
 .about-image {

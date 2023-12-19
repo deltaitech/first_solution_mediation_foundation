@@ -77,6 +77,10 @@
 
         <!-- About Boxes -->
         <div class="row about-margin">
+            <div class="title text-center pb-5 wow fadeInUp" data-wow-delay="100ms">
+                <h2 class="main-font font-weight-600 text-black">@lang('words.our_feature')</h2>
+            </div>
+
             <!-- First Box -->
             @foreach ($features as $feature)
                 <div class="col-md-4 col-sm-12">

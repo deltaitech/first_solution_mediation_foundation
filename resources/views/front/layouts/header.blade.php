@@ -135,8 +135,12 @@
 
                         {{-- <a class="nav-link scroll line" href="#blog">Blog</a> --}}
 
-                        <a href="" class="btn btn-large btn-rounded btn-green btn-hvr-up btn-hvr-blue"
-                            data-animation-duration="500" data-fancybox data-src="#animatedModal">Get Started Now</a>
+                        <a href="" class="button1"
+                            data-animation-duration="500">{{ __('words.request_consultation') }}</a>
+
+                        {{-- <a href="" class="btn btn-large btn-rounded btn-green btn-hvr-up btn-hvr-blue"
+                            data-animation-duration="500" data-fancybox
+                            data-src="#animatedModal">{{ __('words.request_consultation') }}</a> --}}
 
                         {{-- Language Toggler --}}
                         <li class="nav-item language-toggler">
