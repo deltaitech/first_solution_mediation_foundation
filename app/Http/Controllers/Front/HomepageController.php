@@ -43,9 +43,8 @@ class HomepageController extends Controller
         try {
             $sliders                 = $this->slider->active()->latest('id')->get();
             $about_us                = $this->page->where('identifier', 'about_us')->first();
-            $features               = $this->feature->active()->latest('id')->get();
-            // $solutions_page          = $this->page->where('identifier', 'solutions')->first();
-            // $separator_1             = $this->page->where('identifier', 'separator_1')->first();
+            $features                = $this->feature->active()->latest('id')->get();
+            $separator               = $this->page->where('identifier', 'separator')->first();
             // $processes               = $this->process->active()->latest('id')->get();
             // $process                 = $this->page->where('identifier', 'process')->first();
             // $services                = $this->service->active()->latest('id')->take(3)->get();
@@ -58,9 +57,8 @@ class HomepageController extends Controller
             return view('front.index', compact(
                 'sliders',
                 'about_us',
-                // 'solutions_page',
                 'features',
-                // 'separator_1',
+                'separator',
                 // 'processes',
                 // 'process',
                 // 'services',

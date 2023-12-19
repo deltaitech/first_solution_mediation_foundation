@@ -119,7 +119,7 @@ class PageSeeder extends Seeder
 
         //separator page
         $page = Page::create([
-            "identifier" => "goals",
+            "identifier" => "separator",
             "has_title" => 0,
             "has_sub_title" => 0,
             "has_description" => 1,
