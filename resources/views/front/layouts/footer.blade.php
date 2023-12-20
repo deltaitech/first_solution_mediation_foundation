@@ -1,5 +1,5 @@
 <!-- START FOOTER -->
-<footer class="footer">
+{{-- <footer class="footer">
     <div class="container">
         <div class="row align-items-center">
             <!--Social-->
@@ -26,8 +26,114 @@
             </div>
         </div>
     </div>
-</footer>
+</footer> --}}
 <!-- END FOOTER -->
+
+<!-- Footer starts -->
+<footer
+    class="bg-light-gray px-0 footer-image {{ request()->routeIs('home') || request()->routeIs('contact') ? '' : 'pt-5' }}"
+    style="background-image: url({{ settings()->footer_img }})">
+    <div class="container">
+        {{-- test footer --}}
+
+        {{-- <footer> --}}
+        <div class="row w-100">
+            {{-- About Us --}}
+            <div class="col-12 col-md-6 col-lg-4 sec aboutus">
+                {{-- <h2>{{ __('words.about_us') }}</h2> --}}
+                <img class="w-50 pb-4" src="{{ settings()->white_logo }}" alt="">
+                <div class="description">{!! settings()->footer_description !!}</div>
+
+                @if ($contacts)
+                    <ul class="sci">
+                        @foreach ($contacts as $contact)
+                            @if ($contact->type == 'social')
+                                <li>
+                                    <a target="_blank" href="{{ $contact->contact }}"><i class="{{ $contact->icon }}"
+                                            aria-hidden="true"></i></a>
+                                </li>
+                            @endif
+                        @endforeach
+                    </ul>
+                @endif
+            </div>
+
+            {{-- Quick Links --}}
+            <div class="col-12 col-md-6 col-lg-4 sec quickLinks">
+                <h2>{{ __('words.quick_links') }}</h2>
+                <ul>
+                    <li><a class="{{ request()->routeIs('front.home') ? 'active' : '' }}"
+                            href="{{ route('front.home') }}">{{ __('words.home') }}</a></li>
+                    <li><a class="{{ request()->routeIs('about') ? 'active' : '' }}"
+                            href="{{ route('about') }}">{{ __('words.about_us') }}</a></li>
+                    <li><a class="{{ request()->routeIs('services.index.*') ? 'active' : '' }}"
+                            href="{{ route('front_services.index') }}">{{ __('words.services') }}</a></li>
+                    <li><a class="{{ request()->routeIs('contact') ? 'active' : '' }}"
+                            href="{{ route('contact') }}">{{ __('words.contact_us') }}</a></li>
+                </ul>
+            </div>
+
+            {{-- Contact Info --}}
+            <div class="col-12 col-md-6 col-lg-4 sec contact">
+                <h2>{{ __('words.contact_info') }}</h2>
+                <div class="info">
+                    <p class="mb-2 location d-flex align-items-center">
+                        <span class="icon fas fa-map-marker-alt"></span>
+                        <span>{{ settings()->address }}</span>
+                    </p>
+
+                    <!-- Contact Info -->
+                    @if ($contacts)
+                        @foreach ($contacts as $contact)
+                            @if (in_array($contact->type, ['mobile', 'phone', 'email']))
+                                <p class="mb-2 contacts d-flex align-items-center">
+                                    {{-- Icon --}}
+                                    <span class="icon {{ $contact->icon }}"></span>
+
+                                    {{-- Contact Value --}}
+                                    @if ($contact->type == 'mobile')
+                                        <span>{{ __('words.mobile') }}: </span>
+                                        <a href="tel:{{ $contact->contact }}" class="mx-1"
+                                            style="direction: ltr;">{{ $contact->contact }}</a>
+                                    @elseif($contact->type == 'phone')
+                                        <span>{{ __('words.phone') }}: </span>
+                                        <a href="tel:{{ $contact->contact }}" class="mx-1"
+                                            style="direction: ltr;">{{ $contact->contact }}</a>
+                                    @elseif($contact->type == 'email')
+                                        <span>{{ __('words.email') }}: </span>
+                                        <a href="mailto:{{ $contact->contact }}"
+                                            class="mx-1">{{ $contact->contact }}</a>
+                                    @endif
+                                </p>
+                            @endif
+                        @endforeach
+                    @endif
+                </div>
+            </div>
+        </div>
+
+        {{-- Copyrights - Company --}}
+        <div class="row w-100">
+            <div class="col-12 text-center copyrights">
+                <p class="copyrights w-100 mt-3">{{ settings()->copyrights }}</p>
+            </div>
+        </div>
+    </div>
+
+    {{-- Copyrights - Marwan --}}
+    <div class="container-fluid marwan-copyright-container mt-3 py-1">
+        <div class="row">
+            <div class="col-12 text-center px-0">
+                <p class="marwan-copyrights w-100 d-flex justify-content-center align-items-center">
+                    <span>{{ __('words.marwan_copyrights') }}</span><a href="https://marwan.tech/ar/service-request"
+                        target="_blank">{{ __('words.marwan_company') }}</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Footer ends -->
+
 
 <!--START SCROLL TOP-->
 <div class="go-top"><i class="fas fa-angle-up"></i><i class="fas fa-angle-up"></i></div>

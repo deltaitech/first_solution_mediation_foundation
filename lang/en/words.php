@@ -89,6 +89,13 @@ return [
     "show_more" => "Show More",
     "request_consultation" => "Free Consultation",
     "our_feature" => "Our Features",
+    "about_us" => "About us",
+    "contact_info" => "Contact Info",
+
+
+    "quick_links" => "Quick Links",
+    "marwan_copyrights" => "Designed & Developed By",
+    "marwan_company" => "Marwan Group For Information Technology",
 
 
     "show_masters" => "Show All Master Data",

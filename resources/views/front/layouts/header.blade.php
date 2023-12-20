@@ -121,11 +121,11 @@
                     <div class="navbar-nav ml-auto">
                         {{-- Home --}}
                         <a class="nav-link line {{ request()->routeIs('front.home') ? 'active' : '' }}"
-                            href="{{ route('front.home') }}">Home</a>
+                            href="{{ route('front.home') }}">{{ __('words.home') }}</a>
 
                         {{-- About Us --}}
                         <a class="nav-link line {{ request()->routeIs('about') ? 'active' : '' }}"
-                            href="{{ route('about') }}">About Us</a>
+                            href="{{ route('about') }}">{{ __('words.about_us') }}</a>
 
                         <a class="nav-link line {{ request()->routeIs('services.*') ? 'active' : '' }}"
                             href="{{ route('front_services.index') }}">{{ __('words.services') }}</a>

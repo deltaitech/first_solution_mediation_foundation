@@ -22,8 +22,8 @@ class SettingSeeder extends Seeder
             'en' => [
                 'website_title' => 'First Solution Brokerage Company',
                 'footer_description' => '<p>First Solution Brokerage Company provides all real estate financing solutions, and offers its clients a full range of services and real estate loans</p>',
-                'address' => 'P.O. Box No. 14765 Riyadh 11434, Makkah Road, Riyadh, Kingdom of Saudi Arabia',
-                'copyrights' => 'Copyright © 2023 - ADVACON LTD.',
+                'address' => 'Riyadh, Kingdom of Saudi Arabia',
+                'copyrights' => 'Copyright © 2023 - First Solution Brokerage Company',
                 'meta_keywords' => 'First Solution Brokerage Company',
                 'meta_title' => 'First Solution Brokerage Company',
                 'meta_description' => 'First Solution Brokerage Company',

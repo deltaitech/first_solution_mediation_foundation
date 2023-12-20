@@ -91,6 +91,12 @@ return [
     "show_more" => "شاهد المزيد",
     "request_consultation" => "طلب إستشارة مجانية",
     "our_feature" => "ما يميزنا",
+    "about_us" => "من نحن",
+    "contact_info" => "بيانات التواصل",
+
+    "quick_links" => "روابط مهمة",
+    "marwan_copyrights" => "تصميم وبرمجة",
+    "marwan_company" => "مروان جروب لتقنية المعلومات",
 
 
     "show_masters" => "عرض كل البيانات الأساسية",

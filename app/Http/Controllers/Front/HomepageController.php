@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Models\Contact;
 use App\Models\Feature;
 use App\Models\Page;
 use App\Models\Partner;
@@ -19,7 +20,7 @@ class HomepageController extends Controller
     private $partner;
     private $service;
     // private $teamValue;
-    // private $contact;
+    private $contact;
 
 
     public function __construct(
@@ -29,7 +30,7 @@ class HomepageController extends Controller
         Service $service,
         Partner $partner,
         // TeamValue $teamValue,
-        // Contact $contact,
+        Contact $contact,
     ) {
         $this->slider      = $slider;
         $this->page        = $page;
@@ -37,7 +38,7 @@ class HomepageController extends Controller
         $this->service     = $service;
         $this->partner     = $partner;
         // $this->teamValue   = $teamValue;
-        // $this->contact     = $contact;
+        $this->contact     = $contact;
     }
 
     public function index()
@@ -53,7 +54,7 @@ class HomepageController extends Controller
             // $team_values_page        = $this->page->where('identifier', 'team_values')->first();
             // $teamValues              = $this->teamValue->active()->latest('id')->get();
             // $separator_2             = $this->page->where('identifier', 'separator_2')->first();
-            // $contacts                = $this->contact->active()->get();
+            $contacts                = $this->contact->active()->get();
 
             // return view('front.index');
             return view('front.index', compact(
@@ -67,7 +68,7 @@ class HomepageController extends Controller
                 // 'team_values_page',
                 // 'teamValues',
                 // 'separator_2',
-                // 'contacts',
+                'contacts',
             ));
         } catch (\Exception $e) {
             return redirect()->back()->with(['error', __('message.something_wrong')]);
