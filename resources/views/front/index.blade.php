@@ -16,7 +16,7 @@
 
     @include('front.components.separator')
 
-    @include('front.components.clients')
+    @include('front.components.partners')
 
-    @include('front.components.news')
+    {{-- @include('front.components.news') --}}
 @endsection

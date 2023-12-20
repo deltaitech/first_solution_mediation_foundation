@@ -88,6 +88,7 @@ return [
     "import" => "استيراد",
     "export" => "تصدير",
     "read_more" => "إقرأ المزيد",
+    "show_more" => "شاهد المزيد",
     "request_consultation" => "طلب إستشارة مجانية",
     "our_feature" => "ما يميزنا",
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Front;
 use App\Http\Controllers\Controller;
 use App\Models\Feature;
 use App\Models\Page;
+use App\Models\Partner;
 use App\Models\Service;
 use App\Models\Slider;
 use Illuminate\Http\Request;
@@ -15,7 +16,7 @@ class HomepageController extends Controller
     private $slider;
     private $page;
     private $feature;
-    // private $process;
+    private $partner;
     private $service;
     // private $teamValue;
     // private $contact;
@@ -26,7 +27,7 @@ class HomepageController extends Controller
         Page $page,
         Feature $feature,
         Service $service,
-        // Process $process,
+        Partner $partner,
         // TeamValue $teamValue,
         // Contact $contact,
     ) {
@@ -34,7 +35,7 @@ class HomepageController extends Controller
         $this->page        = $page;
         $this->feature    = $feature;
         $this->service     = $service;
-        // $this->process     = $process;
+        $this->partner     = $partner;
         // $this->teamValue   = $teamValue;
         // $this->contact     = $contact;
     }
@@ -47,7 +48,7 @@ class HomepageController extends Controller
             $features                = $this->feature->active()->latest('id')->get();
             $separator               = $this->page->where('identifier', 'separator')->first();
             $services                = $this->service->active()->latest('id')->take(3)->get();
-            // $processes               = $this->process->active()->latest('id')->get();
+            $partners                = $this->partner->active()->latest('id')->get();
             // $process                 = $this->page->where('identifier', 'process')->first();
             // $team_values_page        = $this->page->where('identifier', 'team_values')->first();
             // $teamValues              = $this->teamValue->active()->latest('id')->get();
@@ -61,7 +62,7 @@ class HomepageController extends Controller
                 'features',
                 'separator',
                 'services',
-                // 'processes',
+                'partners',
                 // 'process',
                 // 'team_values_page',
                 // 'teamValues',

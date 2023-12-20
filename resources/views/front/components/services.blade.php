@@ -34,8 +34,7 @@
 
                 </ul>
                 <div class="text-center pt-5">
-                    <a href="corporate-finance/standalone.html"
-                        class="btn btn-large btn-rounded btn-green btn-hvr-up btn-hvr-blue">View More Portfolio</a>
+                    <a href="corporate-finance/standalone.html" class="button1">@lang('words.show_more')</a>
                 </div>
             </div>
         </div>

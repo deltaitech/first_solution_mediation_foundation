@@ -288,8 +288,7 @@ section.about {
 }
 
 .about-box:hover {
-	/* background-color: rgba(var(--primaryColor), 0.5) !important; */
-	background-color: rgba(var(--secondaryColor), 0.5) !important;
+	background-color: rgba(var(--secondaryColor), 0.7) !important;
 	cursor: default;
 	/* background-color: var(--secondary) !important; */
 	/* background-color: #0f6175 !important; */
@@ -532,3 +531,30 @@ section.quote .admission-text p {
 	line-height: 1.2;
 }
 /* *********************** separator Section ***************************/
+
+/* *********************** partners Section ***************************/
+
+.services-slider .swiper-slide img {
+	height: 250px;
+	object-fit: contain;
+	object-position: center;
+	transition: 750ms transform;
+}
+
+.services-slider .swiper-slide:hover img {
+	transform: translateY(-15px);
+}
+
+.swiper.services-slider {
+	padding-top: 0px;
+	padding-bottom: 50px;
+}
+
+div.partner-image {
+	margin-inline: 70px;
+}
+
+.partner-section {
+	padding-top: 120px !important;
+}
+/* *********************** partners Section ***************************/
