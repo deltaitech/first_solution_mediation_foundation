@@ -2,6 +2,6 @@
 
 @yield('content')
 
-{{-- @include('front.components.whatsapp') --}}
+@include('front.components.whatsapp')
 
 @include('front.layouts.footer')

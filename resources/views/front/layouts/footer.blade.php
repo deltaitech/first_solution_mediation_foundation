@@ -136,7 +136,7 @@
 
 
 <!--START SCROLL TOP-->
-<div class="go-top"><i class="fas fa-angle-up"></i><i class="fas fa-angle-up"></i></div>
+<div class="go-top"><i class="fas fa-angle-up"></i></div>
 <!--END SCROLL TOP-->
 
 <!-- JavaScript -->
