@@ -840,6 +840,14 @@ footer .info .icon {
 	padding-top: 50px;
 }
 
+.go-top {
+	background-color: var(--secondary);
+}
+
+.go-top:hover::before,
+.go-top:focus::before {
+	background-color: var(--primary);
+}
 /*******************end footer style***************************/
 
 /*******************whatsapp floating icon***************************/
