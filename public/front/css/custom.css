@@ -54,16 +54,6 @@ footer .icon::before {
 	-webkit-box-orient: vertical !important;
 }
 
-.text-limit,
-.text-limit * {
-	overflow: hidden !important;
-	text-overflow: ellipsis !important;
-	display: -webkit-box !important;
-	-webkit-line-clamp: var(--lines) !important;
-	line-clamp: var(--lines) !important;
-	-webkit-box-orient: vertical !important;
-}
-
 .button1 {
 	font-size: 16px;
 	font-weight: 400;
@@ -79,9 +69,10 @@ footer .icon::before {
 		var(--primary)
 	);
 	background-size: 500% 400%;
-	color: white;
+	color: white !important;
 	border-radius: 50px;
 	transition: 0.6s all;
+	cursor: pointer;
 }
 
 .button1:hover {
@@ -297,8 +288,9 @@ section.about {
 }
 
 .about-box:hover {
-	background-color: rgba(var(--primaryColor), 0.5) !important;
+	/* background-color: rgba(var(--primaryColor), 0.5) !important; */
 	background-color: rgba(var(--secondaryColor), 0.5) !important;
+	cursor: default;
 	/* background-color: var(--secondary) !important; */
 	/* background-color: #0f6175 !important; */
 }
@@ -440,6 +432,58 @@ section.services-sec {
 }
 
 /* *********************** About Section ***************************/
+
+/* *********************** services Section ***************************/
+
+section.services-section {
+	background-color: whitesmoke;
+	padding-block: 120px;
+}
+
+li.services-item {
+	width: 400px;
+	height: 400px;
+}
+
+li.services-item img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+}
+
+.da-thumbs > li .overlay {
+	background-color: rgba(var(--secondaryColor), 0.5) !important;
+	opacity: unset;
+}
+
+.search-icon {
+	border: unset;
+	font-size: 20px;
+}
+
+.da-thumbs > li .overlay h4 {
+	transition: 500ms color;
+	font-weight: 600;
+}
+
+div.overlay {
+	padding-inline: 20px;
+}
+
+div.overlay a:hover h4 {
+	color: rgba(245, 245, 245, 0.801);
+}
+
+/* .da-thumbs > li .overlay * {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	text-align: center;
+} */
+
+/* *********************** services Section ***************************/
 
 /* *********************** separator Section ***************************/
 section.parallax {
