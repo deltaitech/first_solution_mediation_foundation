@@ -22,7 +22,7 @@
                                         <div class="search-icon">
                                             <i class="fa fa-search"></i>
                                         </div>
-                                        <a href="#">
+                                        <a href="{{ route('front_services.show', $service->id) }}">
                                             <h4 class="">{{ $service->title }}</h4>
                                         </a>
                                         {{-- <span>New York, USA</span> --}}

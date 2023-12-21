@@ -123,6 +123,21 @@ li.breadcrumb-item.active {
 .page-breadcrumb li a .icon {
 	color: var(--secondary);
 }
+
+.breadcrumb-item + .breadcrumb-item::before {
+	display: unset !important;
+	padding-right: unset !important;
+	color: unset !important;
+	content: '';
+}
+
+.page-breadcrumb li a {
+	transition: 500ms color;
+}
+
+.page-breadcrumb li a:hover {
+	color: var(--secondary);
+}
 /* *********************** navbar  ***************************/
 header a.logo img {
 	max-width: unset;
@@ -133,6 +148,12 @@ header a.logo img {
 .round-nav {
 	padding: 6px 30px;
 }
+
+.line:hover:after,
+.line.active:after {
+	border-color: var(--secondary);
+}
+
 /* *********************** navbar  ***************************/
 
 /* *********************** swiper-pagination  ***************************/
@@ -1462,3 +1483,199 @@ footer .info .icon {
 }
 
 /* **************************** Pagination style end ****************************** */
+
+/* **************************** services ****************************** */
+
+.single-service {
+	padding-block: 7.5rem;
+}
+
+.tab-des p {
+	text-align: justify;
+	color: var(--description);
+}
+
+/* **************************** services test ****************************** */
+
+/*************************************/
+/************ Our Services **********/
+/*************************************/
+
+.our-services {
+	padding-top: 80px;
+	padding-bottom: 80px;
+	background-color: #f5f5f5;
+}
+.single-service-content {
+	border-radius: 25px !important;
+}
+.our-services .our-heading .heading-text {
+	margin-bottom: 50px;
+}
+.our-services .service-text {
+	padding-bottom: 30px;
+}
+.our-services .nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+	background-color: transparent;
+	color: #f1c30f;
+	text-decoration: none;
+}
+.our-services .nav-pills .nav-link.active span,
+.nav-pills .show > .nav-link span {
+	border-bottom: solid 2px #f1c30f;
+	padding-bottom: 3px;
+}
+.our-services .nav-pills .nav-link {
+	color: #142022;
+	text-decoration: none;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: bold;
+}
+.our-services .service-tab .tab-pane {
+	background-color: #ffffff;
+	overflow: hidden;
+}
+.our-services .tab-content .tab-img img {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	object-position: center;
+	border-radius: 25px !important;
+}
+.our-services .tab-content .tab-des {
+	padding: 70px 30px;
+}
+.our-services .tab-content .tab-des .tab-num {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: bold;
+	font-size: 48px;
+	color: #e4e4e4;
+	margin-bottom: 20px;
+	display: inline-block;
+}
+.our-services .tab-content .tab-des .tab-title {
+	font-weight: 600;
+	font-size: 30px;
+	color: var(--primary);
+	margin-bottom: 16px;
+	text-align: start;
+}
+.our-services .tab-content .tab-des .tab-text {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	font-size: 13px;
+	color: #535353;
+	margin-bottom: 30px;
+}
+.our-services .service-tab .tab-content .tab-pane.active .tab-img img {
+	-webkit-animation: 0.4s slideInDown;
+	animation: 0.4s slideInDown;
+	-webkit-animation-delay: 0s;
+	animation-delay: 0s;
+}
+.our-services .service-tab .tab-content .tab-pane.active .tab-detail .tab-des {
+	-webkit-animation: 0.4s slideInUp;
+	animation: 0.4s slideInUp;
+}
+/*.our-services .service-tab .tab-content .tab-pane:nth-child(even).active .tab-img img{*/
+/*    animation: .8s slideInUp;*/
+/*    animation-delay: 0s;*/
+/*}*/
+/*.our-services .service-tab .tab-content .tab-pane:nth-child(even).active .tab-detail .tab-des{*/
+/*    animation: .8s slideInDown;*/
+/*}*/
+/***********************************/
+/***********Service List***********/
+/***********************************/
+
+.service-list {
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+.service-list .media {
+	padding-top: 30px;
+	padding-bottom: 30px;
+	cursor: pointer;
+	padding-right: 60px;
+	z-index: 11;
+	position: relative;
+	-webkit-transition: 0.8s ease;
+	-o-transition: 0.8s ease;
+	transition: 0.8s ease;
+}
+
+.service-list .media:nth-child(even) {
+	padding-left: 60px;
+	padding-right: 15px;
+}
+.service-list .media .media-box {
+	-webkit-transition: 0.8s ease;
+	-o-transition: 0.8s ease;
+	transition: 0.8s ease;
+}
+.service-list .media:hover .media-box {
+}
+.service-list .media .media-icon {
+	margin-right: 1.8rem;
+}
+.service-list .media .media-icon i {
+	font-size: 45px;
+	color: #142022;
+	margin-top: 3px;
+	-webkit-transition: 0.8s ease;
+	-o-transition: 0.8s ease;
+	transition: 0.8s ease;
+}
+.service-list .media:hover .media-icon i {
+	color: #f1c30f;
+}
+.service-list .media .media-icon .hover-line {
+	display: inline-block;
+	height: 2px;
+	width: 0;
+	background-color: #f1c30f;
+	-webkit-transition: 0.8s ease;
+	-o-transition: 0.8s ease;
+	transition: 0.8s ease;
+	margin-bottom: 12px;
+}
+.service-list .media .media-body .hover-line {
+	display: inline-block;
+	height: 2px;
+	width: 0;
+	background-color: #f1c30f;
+	-webkit-transition: 0.8s ease;
+	-o-transition: 0.8s ease;
+	transition: 0.8s ease;
+	margin-bottom: 2px;
+}
+.service-list .media:hover .hover-line {
+	width: 10%;
+	margin-right: 5px;
+}
+
+.service-list .media .media-body .heading-title {
+	color: #f1c30f;
+	font-size: 12px;
+	font-weight: 700;
+	-webkit-transition: 0.8s ease;
+	-o-transition: 0.8s ease;
+	transition: 0.8s ease;
+}
+.service-list .media:hover .media-body .heading-title {
+	color: #142022;
+}
+
+.service-list .media .media-body .small-heading {
+	letter-spacing: -0.5px;
+	-webkit-transition: 0.8s ease;
+	-o-transition: 0.8s ease;
+	transition: 0.8s ease;
+}
+.service-list .media:hover .media-body .small-heading {
+	color: #f1c30f;
+	letter-spacing: -1px;
+}
+
+/* **************************** services test ****************************** */

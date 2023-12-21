@@ -21,7 +21,7 @@ Route::group([
 
     // services
     Route::get('/services', [ServiceController::class, 'index'])->name('front_services.index');
-    //   Route::get('/services/{service}', [ServiceController::class, 'show'])->name('front_services.show');
+    Route::get('/services/{service}', [ServiceController::class, 'show'])->name('front_services.show');
 
     // Contact
     Route::get('/contact-us', [ContactController::class, 'index'])->name('contact');
