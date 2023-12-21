@@ -150,6 +150,13 @@ header a.logo img {
 
 /* *********************** Slider ***************************/
 
+.custom-navigation {
+	color: var(--secondary);
+}
+
+.swiper-pagination .swiper-pagination-bullet {
+	background-color: var(--secondary);
+}
 section,
 .section-padding {
 	padding: 0px;
@@ -1426,3 +1433,32 @@ footer .info .icon {
 	padding-inline-start: 2rem;
 }
 /******************* About Us Page***************************/
+
+/* **************************** Pagination style start ****************************** */
+.navigation .pagination .page-item .page-link {
+	--size: 40px;
+	background-color: transparent;
+	/* color: #302d2d; */
+	color: var(--darkGrey);
+	border: 2px solid var(--secondary);
+	border-radius: 50%;
+	width: var(--size);
+	height: var(--size);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 4px;
+}
+
+.navigation .pagination .page-item.active .page-link,
+.navigation .pagination .page-item .page-link:hover {
+	background-color: rgba(var(--secondaryColor), 0.5);
+}
+
+.navigation .pagination .page-item.disabled .page-link {
+	border-color: rgb(71, 56, 56, 0.25);
+	background-color: rgb(71, 56, 56, 0.25);
+	color: rgb(71, 56, 56);
+}
+
+/* **************************** Pagination style end ****************************** */

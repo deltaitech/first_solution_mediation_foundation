@@ -33,11 +33,22 @@
                     @endforeach
 
                 </ul>
-                <div class="text-center pt-5">
-                    <a href="corporate-finance/standalone.html" class="button1">@lang('words.show_more')</a>
-                </div>
+                @if (request()->routeIs('front.home'))
+                    <div class="text-center pt-5" data-aos="fade-down">
+                        <a href="{{ route('front_services.index') }}" class="button1">@lang('words.show_more')</a>
+                    </div>
+                @endif
+
             </div>
         </div>
+
+
+        @if (request()->routeIs('front_services.index'))
+            <!--pagination-->
+            <div class="row mt-5 text-center d-flex justify-content-center align-items-center">
+                {{ $services->links('front.pagination.default') }}
+            </div>
+        @endif
     </div>
 </section>
 <!-- END PORTFOLIO -->
