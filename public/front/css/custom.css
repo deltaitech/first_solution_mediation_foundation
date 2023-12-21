@@ -34,6 +34,14 @@
 	letter-spacing: 0 !important;
 }
 
+::-webkit-scrollbar-thumb {
+	background-color: var(--secondary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: var(--primary);
+}
+
 i,
 i::after,
 i::before,
@@ -660,7 +668,7 @@ ul.sci {
 	height: 40px;
 	background: var(--secondary);
 	/* background: whitesmoke; */
-	color: var(--primary);
+	color: white;
 	/* color: var(--darkBlue); */
 	display: flex;
 	justify-content: center;
@@ -672,7 +680,7 @@ ul.sci {
 
 .sci li a:hover {
 	background: var(--primary);
-	color: var(--secondary);
+	color: white;
 }
 
 .sci li a .fa {
@@ -695,6 +703,7 @@ ul.sci {
 	text-decoration: none;
 	margin-bottom: 10px;
 	display: inline-block;
+	font-weight: 500;
 }
 
 .quickLinks ul li a.active,
@@ -842,6 +851,9 @@ footer .info .icon {
 
 .go-top {
 	background-color: var(--secondary);
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .go-top:hover::before,
@@ -1373,3 +1385,43 @@ footer .info .icon {
 	border-radius: 100%;
 }
 /*******************whatsapp floating icon***************************/
+
+/******************* About Us Page***************************/
+#about-page section.about {
+	/* padding-block-end: 120px; */
+}
+
+#about-page .about-content {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.about-img-area .about-img img {
+	border-radius: 15px;
+}
+
+.ui-block-26.about .about-container {
+	padding-inline-start: 2rem;
+}
+
+.ui-block-26.about .about-container:nth-child(even) {
+	padding-inline-start: 0;
+	padding-inline-end: 2rem;
+}
+
+.ui-block-26.about .about-container:nth-child(even) .about-img-area {
+	order: -1;
+	/* padding-inline-start: 1rem; */
+}
+
+.about-title {
+	/* background-color: red; */
+	padding-inline-end: 2rem;
+}
+
+.about-title-2 {
+	padding-inline-start: 2rem;
+}
+/******************* About Us Page***************************/

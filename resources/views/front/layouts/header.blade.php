@@ -118,7 +118,7 @@
 
                 <!--Nav Links-->
                 <div class="collapse navbar-collapse" id="megaone">
-                    <div class="navbar-nav ml-auto">
+                    <div class="navbar-nav ms-auto">
                         {{-- Home --}}
                         <a class="nav-link line {{ request()->routeIs('front.home') ? 'active' : '' }}"
                             href="{{ route('front.home') }}">{{ __('words.home') }}</a>
