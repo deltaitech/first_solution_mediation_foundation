@@ -120,8 +120,9 @@ li.breadcrumb-item.active {
 	color: var(--secondary);
 }
 
-/* *********************** breadcrumb  ***************************/
-
+.page-breadcrumb li a .icon {
+	color: var(--secondary);
+}
 /* *********************** navbar  ***************************/
 header a.logo img {
 	max-width: unset;
