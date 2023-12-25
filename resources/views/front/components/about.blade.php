@@ -1,5 +1,5 @@
 <section class="ui-block-32 about">
-    <div class="container">
+    <div class="container" data-aos="fade-down">
         <div class="row dot-box">
             <!-- Heading Area-->
             <div class="col-lg-6 order-lg-2 about-content">

@@ -3,7 +3,7 @@
     style="background-image:url('{{ $separator->image }}');	background-size: auto !important;
     ">
     <div class="overlay-admission"></div>
-    <div class="container">
+    <div class="container" data-aos="zoom-in-up">
         <div class="row">
             <div class="col-12 text-center">
                 <div class="admission-text">

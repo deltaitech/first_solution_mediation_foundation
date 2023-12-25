@@ -1,6 +1,6 @@
 <!-- START PORTFOLIO -->
 <section id="portfolio" class="padding ">
-    <div class="container">
+    <div class="container" data-aos="fade-up">
         <div class="row mt-3">
             <div class="col-md-12">
                 <div class="title text-center pb-5 wow fadeInUp" data-wow-delay="100ms">
