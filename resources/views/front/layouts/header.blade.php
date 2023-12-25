@@ -111,7 +111,7 @@
     <!--Navigation-->
     <nav class="navbar navbar-top-default navbar-expand-lg navbar-simple nav-line">
         <div class="container round-nav">
-            <a href="index-corporate-finance.html" title="Logo" class="logo scroll">
+            <a href="{{route('front.home')}}" title="Logo" class="logo">
                 <!--Logo Default-->
                 <img src="{{ settings()->logo }}" alt="logo" class="ml-lg-3 m-0">
             </a>
