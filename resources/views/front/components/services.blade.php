@@ -1,6 +1,6 @@
 <!-- START PORTFOLIO -->
 <section id="portfolio" class="padding ">
-    <div class="container" data-aos="fade-up">
+    <div class="container">
         <div class="row mt-3">
             <div class="col-md-12">
                 <div class="title text-center pb-5 wow fadeInUp" data-wow-delay="100ms">
@@ -10,8 +10,8 @@
             </div>
 
             <div class="row">
-                @foreach ($services as $service)
-                    <div class="col mb-3  d-flex justify-content-center align-items-center">
+                @foreach ($services as $key=>$service)
+                    <div class="col mb-3 d-flex justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="{{$key * 100}}">
                         <div class="card services-item">
                             <div class="card-header">
                                 <a href="{{ $service->image }}" class="services-image" data-fancybox="images">
