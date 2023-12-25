@@ -96,6 +96,12 @@ footer .icon::before {
 
 /* *********************** global  ***************************/
 
+/************************* Preloader Start*************************/
+.loader:before, .loader:after {
+    border: 1em solid var(--primary) !important;
+}
+/************************* Preloader ُىي*************************/
+
 /* *********************** breadcrumb  ***************************/
 
 :lang(ar) .page-breadcrumb li a .icon {
