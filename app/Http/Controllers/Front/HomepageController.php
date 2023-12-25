@@ -19,42 +19,29 @@ class HomepageController extends Controller
     private $feature;
     private $partner;
     private $service;
-    // private $teamValue;
     private $contact;
 
 
-    public function __construct(
-        Slider $slider,
-        Page $page,
-        Feature $feature,
-        Service $service,
-        Partner $partner,
-        // TeamValue $teamValue,
-        Contact $contact,
-    ) {
-        $this->slider      = $slider;
-        $this->page        = $page;
-        $this->feature    = $feature;
-        $this->service     = $service;
-        $this->partner     = $partner;
-        // $this->teamValue   = $teamValue;
-        $this->contact     = $contact;
+    public function __construct(Slider $slider, Page $page, Feature $feature, Service $service, Partner $partner, Contact $contact)
+    {
+        $this->slider = $slider;
+        $this->page = $page;
+        $this->feature = $feature;
+        $this->service = $service;
+        $this->partner = $partner;
+        $this->contact = $contact;
     }
 
     public function index()
     {
         try {
-            $sliders                 = $this->slider->active()->latest('id')->get();
-            $about_us                = $this->page->where('identifier', 'about_us')->first();
-            $features                = $this->feature->active()->latest('id')->get();
-            $separator               = $this->page->where('identifier', 'separator')->first();
-            $services                = $this->service->active()->latest('id')->take(3)->get();
-            $partners                = $this->partner->active()->latest('id')->get();
-            // $process                 = $this->page->where('identifier', 'process')->first();
-            // $team_values_page        = $this->page->where('identifier', 'team_values')->first();
-            // $teamValues              = $this->teamValue->active()->latest('id')->get();
-            // $separator_2             = $this->page->where('identifier', 'separator_2')->first();
-            $contacts                = $this->contact->active()->get();
+            $sliders = $this->slider->active()->latest('id')->get();
+            $about_us = $this->page->where('identifier', 'about_us')->first();
+            $features = $this->feature->active()->latest('id')->get();
+            $separator = $this->page->where('identifier', 'separator')->first();
+            $services = $this->service->active()->latest('id')->take(3)->get();
+            $partners = $this->partner->active()->latest('id')->get();
+            $contacts = $this->contact->active()->get();
 
             // return view('front.index');
             return view('front.index', compact(
@@ -64,11 +51,7 @@ class HomepageController extends Controller
                 'separator',
                 'services',
                 'partners',
-                // 'process',
-                // 'team_values_page',
-                // 'teamValues',
-                // 'separator_2',
-                'contacts',
+                'contacts'
             ));
         } catch (\Exception $e) {
             return redirect()->back()->with(['error', __('message.something_wrong')]);
