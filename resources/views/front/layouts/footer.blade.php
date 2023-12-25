@@ -125,7 +125,7 @@
         <div class="row">
             <div class="col-12 text-center px-0">
                 <p class="marwan-copyrights w-100 d-flex justify-content-center align-items-center">
-                    <span>{{ __('words.marwan_copyrights') }}</span><a href="https://marwan.tech/ar/service-request"
+                    <span>{{ __('words.marwan_copyrights') }}</span>&nbsp;<a href="https://marwan.tech/ar/service-request"
                         target="_blank">{{ __('words.marwan_company') }}</a>
                 </p>
             </div>

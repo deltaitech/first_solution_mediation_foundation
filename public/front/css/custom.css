@@ -142,7 +142,8 @@ li.breadcrumb-item.active {
 header a.logo img {
 	max-width: unset;
 	vertical-align: unset;
-	width: 115px;
+	width: 12rem;
+    height: 5rem !important;
 }
 
 .round-nav {
@@ -1480,6 +1481,17 @@ footer .info .icon {
 	border-color: rgb(71, 56, 56, 0.25);
 	background-color: rgb(71, 56, 56, 0.25);
 	color: rgb(71, 56, 56);
+}
+
+:lang('ar') .sidemenu_btn {
+    right: unset !important;
+    left: 28px;
+}
+
+@media screen and (min-width: 991px) {
+    .sidemenu_btn {
+        display: none !important;
+    }
 }
 
 /* **************************** Pagination style end ****************************** */

@@ -95,7 +95,7 @@ return [
     "contact_info" => "بيانات التواصل",
 
     "quick_links" => "روابط مهمة",
-    "marwan_copyrights" => "تصميم وبرمجة",
+    "marwan_copyrights" => "تصميم وبرمجة ",
     "marwan_company" => "مروان جروب لتقنية المعلومات",
 
 
