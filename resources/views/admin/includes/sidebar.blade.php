@@ -383,6 +383,18 @@
                 @endpermission
                 {{-- contact_requests route end --}}
 
+                {{-- contact_requests route start --}}
+                @permission('read-consultation_requests')
+                    <li class="menu-item {{ request()->routeIs('consultation_requests.*') ? 'menu-item-active' : '' }}"
+                        aria-haspopup="true">
+                        <a href="{{ route('consultation_requests.index') }}" class="menu-link">
+                            <i class="fas fa-comment-alt svg-icon menu-icon"></i>
+                            <span class="menu-text">{{ __('words.consultation_requests') }}</span>
+                        </a>
+                    </li>
+                @endpermission
+                {{-- consultation_requests route end --}}
+
                 {{-- setting route start --}}
                 @permission('read-settings')
                     <li class="menu-item {{ request()->routeIs('settings.*') ? 'menu-item-active' : '' }}"

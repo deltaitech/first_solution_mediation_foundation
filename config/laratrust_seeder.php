@@ -12,6 +12,8 @@ return [
         "settings" => ["read", "update"],
         "contact_us" => ["read", "delete", "reply"],
         "contact_requests"   => ["read", "delete", "reply"],
+        "consultation_requests" => ["read", "delete", "reply"],
+
         // "categories" => ["read", "create", "update", "delete"],
         // "products" => ["read", "create", "update", "delete"],
         // "projects" => ["read", "create", "update", "delete"],

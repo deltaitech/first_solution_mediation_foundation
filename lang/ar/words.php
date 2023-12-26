@@ -90,6 +90,7 @@ return [
     "read_more" => "إقرأ المزيد",
     "show_more" => "شاهد المزيد",
     "request_consultation" => "طلب إستشارة مجانية",
+    "request_consultation_now" => "أطلب إستشارة مجانية الآن",
     "our_feature" => "ما يميزنا",
     "about_us" => "من نحن",
     "contact_info" => "بيانات التواصل",
@@ -97,6 +98,12 @@ return [
     "contact_msg" => "نحن هنا لمساعدتك! لا تتردد في التواصل مع فريقنا لأية استفسارات أو تعليقات أو دعم.",
     "sent_successfully" => "تم الإرسال بنجاح",
     'reply_to' => 'رد على',
+
+    "consultation_requests" => "طلبات الإستشارات",
+    'show_consultation_requests' => 'رسائل طلبات الإستشارات',
+
+    "consultation_details" => "تفاصيل طلب الإستشارة",
+    "consultation_request_from" => "طلب إستشارة مقدم من: ",
 
 
 

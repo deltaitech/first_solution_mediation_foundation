@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Front\AboutController;
+use App\Http\Controllers\Front\ConsultationController;
 use App\Http\Controllers\Front\ContactController;
 use App\Http\Controllers\Front\HomepageController;
 use App\Http\Controllers\Front\ServiceController;
@@ -26,6 +27,10 @@ Route::group([
     // Contact
     Route::get('/contact-us', [ContactController::class, 'index'])->name('contact');
     Route::post('/contact', [ContactController::class, 'create'])->name('contact.save');
+
+    // Consultation
+    Route::get('/consultation-request', [ConsultationController::class, 'index'])->name('consultation');
+    Route::post('/consultation-request', [ConsultationController::class, 'create'])->name('consultation.save');
 
 
     // Route::get('/', function () {

@@ -88,6 +88,7 @@ return [
     "read_more" => "Read More",
     "show_more" => "Show More",
     "request_consultation" => "Free Consultation",
+    "request_consultation_now" => "Request Free Consultation Now",
     "our_feature" => "Our Features",
     "about_us" => "About us",
     "contact_info" => "Contact Info",
@@ -105,6 +106,13 @@ return [
     "request_details" => "Quotation Request Details",
     "request_details_from" => "Quotation Request From",
     'reply_request_content' => 'Reply For Your Quotation Request',
+
+    "consultation_requests" => "Consultation Requests",
+    'show_consultation_requests' => 'Show Consultation Requests',
+
+    "consultation_details" => "Consultation Details",
+    "consultation_request_from" => "Consultation request from: ",
+
 
 
 

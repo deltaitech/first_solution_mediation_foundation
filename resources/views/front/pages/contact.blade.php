@@ -57,7 +57,6 @@
                                                     style="direction: ltr;">{{ $contact->contact }}</a></p>
                                         </div>
                                     @endif
-                                    </p>
                                 @endif
                             @endforeach
                         @endif

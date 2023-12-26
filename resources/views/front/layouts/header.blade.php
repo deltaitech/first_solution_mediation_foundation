@@ -45,9 +45,9 @@
             rel="stylesheet">
     @else
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap"
-              rel="stylesheet">
+            rel="stylesheet">
     @endif
-<!-- Favicon -->
+    <!-- Favicon -->
     <link rel="icon" href="{{ settings()->favicon }}">
     <!-- Bundle -->
     <link href="{{ asset('front/vendor/css/bundle.min.css') }}" rel="stylesheet">
@@ -64,8 +64,8 @@
 
     {{-- swiper js --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.2.0/swiper-bundle.min.css"
-          integrity="sha512-s6khMl5GDS1HbQ5/SwL1wzMayPwHXPjKoBN5kHUTDqKEPkkGyEZWKyH2lQ3YO2q3dxueG3rE0NHjRawMHd2b6g=="
-          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+        integrity="sha512-s6khMl5GDS1HbQ5/SwL1wzMayPwHXPjKoBN5kHUTDqKEPkkGyEZWKyH2lQ3YO2q3dxueG3rE0NHjRawMHd2b6g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     {{-- swiper js --}}
 
     {{-- AOS --}}
@@ -75,19 +75,19 @@
     {{-- Bootstrap - v5.2.3 --}}
     @if (App::isLocale('ar'))
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.rtl.min.css"
-              integrity="sha512-SRg0d/3qeXy0utrb7F4+4jkFHhzdyvqjAd2i9ub0zWrPS80PoRaAtzmbMeVRYtApxoEcE6tcFZaHRY5UbwrTaw=="
-              crossorigin="anonymous" referrerpolicy="no-referrer"/>
+            integrity="sha512-SRg0d/3qeXy0utrb7F4+4jkFHhzdyvqjAd2i9ub0zWrPS80PoRaAtzmbMeVRYtApxoEcE6tcFZaHRY5UbwrTaw=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
     @else
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"
-              integrity="sha512-b2QcS5SsA8tZodcDtGRELiGv5SaKSk1vDHDaQRda0htPYWZ6046lr3kJ5bAAQdpV2mmA/4v0wQF9MyU6/pDIAg=="
-              crossorigin="anonymous" referrerpolicy="no-referrer"/>
+            integrity="sha512-b2QcS5SsA8tZodcDtGRELiGv5SaKSk1vDHDaQRda0htPYWZ6046lr3kJ5bAAQdpV2mmA/4v0wQF9MyU6/pDIAg=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
     @endif
 
     {{-- font-awesome - v5.15.4 --}}
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-          integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
-          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Style Sheet -->
     <link href="{{ asset('front/vendor/css/elements.css') }}" rel="stylesheet">
@@ -100,223 +100,224 @@
 
 <body data-spy="scroll" data-target=".navbar" data-offset="90">
 
-<!-- Loader -->
-<div class="loader-bg">
-    <div class="loader"></div>
-</div>
-<!-- Loader ends -->
+    <!-- Loader -->
+    <div class="loader-bg">
+        <div class="loader"></div>
+    </div>
+    <!-- Loader ends -->
 
-<!-- START HEADER -->
-<header>
-    <!--Navigation-->
-    <nav class="navbar navbar-top-default navbar-expand-lg navbar-simple nav-line">
-        <div class="container round-nav">
-            <a href="{{route('front.home')}}" title="Logo" class="logo">
-                <!--Logo Default-->
-                <img src="{{ settings()->logo }}" alt="logo" class="ml-lg-3 m-0">
-            </a>
+    <!-- START HEADER -->
+    <header>
+        <!--Navigation-->
+        <nav class="navbar navbar-top-default navbar-expand-lg navbar-simple nav-line">
+            <div class="container round-nav">
+                <a href="{{ route('front.home') }}" title="Logo" class="logo">
+                    <!--Logo Default-->
+                    <img src="{{ settings()->logo }}" alt="logo" class="ml-lg-3 m-0">
+                </a>
 
-            <!--Nav Links-->
-            <div class="collapse navbar-collapse" id="megaone">
-                <div class="navbar-nav ms-auto">
-                    {{-- Home --}}
-                    <a class="nav-link line {{ request()->routeIs('front.home') ? 'active' : '' }}"
-                       href="{{ route('front.home') }}">{{ __('words.home') }}</a>
+                <!--Nav Links-->
+                <div class="collapse navbar-collapse" id="megaone">
+                    <div class="navbar-nav ms-auto">
+                        {{-- Home --}}
+                        <a class="nav-link line {{ request()->routeIs('front.home') ? 'active' : '' }}"
+                            href="{{ route('front.home') }}">{{ __('words.home') }}</a>
 
-                    {{-- About Us --}}
-                    <a class="nav-link line {{ request()->routeIs('about') ? 'active' : '' }}"
-                       href="{{ route('about') }}">{{ __('words.about_us') }}</a>
+                        {{-- About Us --}}
+                        <a class="nav-link line {{ request()->routeIs('about') ? 'active' : '' }}"
+                            href="{{ route('about') }}">{{ __('words.about_us') }}</a>
 
-                    <a class="nav-link line {{ request()->routeIs('front_services.*') ? 'active' : '' }}"
-                       href="{{ route('front_services.index') }}">{{ __('words.services') }}</a>
+                        <a class="nav-link line {{ request()->routeIs('front_services.*') ? 'active' : '' }}"
+                            href="{{ route('front_services.index') }}">{{ __('words.services') }}</a>
 
-                    <a class="nav-link line {{ request()->routeIs('contact') ? 'active' : '' }}"
-                       href="{{ route('contact') }}">{{ __('words.contact_us') }}</a>
+                        <a class="nav-link line {{ request()->routeIs('contact') ? 'active' : '' }}"
+                            href="{{ route('contact') }}">{{ __('words.contact_us') }}</a>
 
-                    {{-- <a class="nav-link scroll line" href="#blog">Blog</a> --}}
+                        {{-- <a class="nav-link scroll line" href="#blog">Blog</a> --}}
 
-                    <a href="" class="button1"
-                       data-animation-duration="500">{{ __('words.request_consultation') }}</a>
+                        <a href="{{ route('consultation') }}"
+                            class="button1 {{ request()->routeIs('consultation') ? 'active' : '' }}"
+                            data-animation-duration="500">{{ __('words.request_consultation') }}</a>
 
-                    {{-- <a href="" class="btn btn-large btn-rounded btn-green btn-hvr-up btn-hvr-blue"
+                        {{-- <a href="" class="btn btn-large btn-rounded btn-green btn-hvr-up btn-hvr-blue"
                         data-animation-duration="500" data-fancybox
                         data-src="#animatedModal">{{ __('words.request_consultation') }}</a> --}}
 
-                    {{-- Language Toggler --}}
-                    <li class="nav-item language-toggler">
-                        @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-                            <a class="nav-link {{ LaravelLocalization::getCurrentLocaleNative() == $properties['native'] ? 'd-none' : '' }}"
-                               rel="alternate" hreflang="{{ $localeCode }}"
-                               href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
-                                <img src="{{ asset('front/icons/' . $localeCode . '.png') }}"
-                                     style="width: 22px;">
-                            </a>
-                        @endforeach
-                    </li>
+                        {{-- Language Toggler --}}
+                        <li class="nav-item language-toggler">
+                            @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                                <a class="nav-link {{ LaravelLocalization::getCurrentLocaleNative() == $properties['native'] ? 'd-none' : '' }}"
+                                    rel="alternate" hreflang="{{ $localeCode }}"
+                                    href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                                    <img src="{{ asset('front/icons/' . $localeCode . '.png') }}"
+                                        style="width: 22px;">
+                                </a>
+                            @endforeach
+                        </li>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <!--Side Menu Button-->
-        <div class="navigation-toggle">
-            <ul class="slider-social toggle-btn my-0">
-                <li>
-                    <a href="javascript:void(0);" class="sidemenu_btn" id="sidemenu_toggle">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+            <!--Side Menu Button-->
+            <div class="navigation-toggle">
+                <ul class="slider-social toggle-btn my-0">
+                    <li>
+                        <a href="javascript:void(0);" class="sidemenu_btn" id="sidemenu_toggle">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
 
-    <!--Side Nav-->
-    <div class="side-menu hidden">
+        <!--Side Nav-->
+        <div class="side-menu hidden">
 
-        <div class="mega-title" id="mega-title">
-            <h2 class="inner-mega-title">Corporate Finance</h2>
-        </div>
+            <div class="mega-title" id="mega-title">
+                <h2 class="inner-mega-title">Corporate Finance</h2>
+            </div>
 
-        <span id="btn_sideNavClose">
+            <span id="btn_sideNavClose">
                 <i class="las la-times btn-close"></i>
             </span>
-        <div class="inner-wrapper">
-            <nav class="side-nav w-100">
-                <a href="{{ route('front.home') }}" title="Logo" class="logo navbar-brand">
-                    <img src="{{settings()->logo}}" alt="logo">
-                </a>
-                <ul class="navbar-nav text-capitalize">
-                    <li class="nav-item">
-                        <a class="nav-link {{ request()->routeIs('front.home') ? 'active' : '' }}"
-                           href="{{ route('front.home') }}">{{ __('words.home') }}</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {{ request()->routeIs('about') ? 'active' : '' }}"
-                           href="{{ route('about') }}">{{ __('words.about_us') }}</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {{ request()->routeIs('front_services.*') ? 'active' : '' }}"
-                           href="{{ route('front_services.index') }}">{{ __('words.services') }}</a>
-                    </li>
+            <div class="inner-wrapper">
+                <nav class="side-nav w-100">
+                    <a href="{{ route('front.home') }}" title="Logo" class="logo navbar-brand">
+                        <img src="{{ settings()->logo }}" alt="logo">
+                    </a>
+                    <ul class="navbar-nav text-capitalize">
+                        <li class="nav-item">
+                            <a class="nav-link {{ request()->routeIs('front.home') ? 'active' : '' }}"
+                                href="{{ route('front.home') }}">{{ __('words.home') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ request()->routeIs('about') ? 'active' : '' }}"
+                                href="{{ route('about') }}">{{ __('words.about_us') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ request()->routeIs('front_services.*') ? 'active' : '' }}"
+                                href="{{ route('front_services.index') }}">{{ __('words.services') }}</a>
+                        </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link {{ request()->routeIs('contact') ? 'active' : '' }}"
-                           href="{{ route('contact') }}">{{ __('words.contact_us') }}</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ request()->routeIs('contact') ? 'active' : '' }}"
+                                href="{{ route('contact') }}">{{ __('words.contact_us') }}</a>
+                        </li>
 
-                    <li class="nav-item">
-                        <a href="" class="button1"
-                           data-animation-duration="500">{{ __('words.request_consultation') }}</a>
-                    </li>
-                    <li class="get-started-btn">
-                        <a href=""
-                           class="btn btn-medium btn-rounded btn-blue btn-hvr-green btn-hvr-up d-lg-none"
-                           data-animation-duration="500" data-fancybox data-src="#animatedModal">Get Started</a>
-                    </li>
-                    {{-- Language Toggler --}}
-                    <li class="nav-item language-toggler">
-                        @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-                            <a class="nav-link {{ LaravelLocalization::getCurrentLocaleNative() == $properties['native'] ? 'd-none' : '' }}"
-                               rel="alternate" hreflang="{{ $localeCode }}"
-                               href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
-                                <img src="{{ asset('front/icons/' . $localeCode . '.png') }}"
-                                     style="width: 22px;">
-                            </a>
-                        @endforeach
-                    </li>
-                </ul>
-            </nav>
+                        <li class="nav-item">
+                            <a href="" class="button1"
+                                data-animation-duration="500">{{ __('words.request_consultation') }}</a>
+                        </li>
+                        <li class="get-started-btn">
+                            <a href=""
+                                class="btn btn-medium btn-rounded btn-blue btn-hvr-green btn-hvr-up d-lg-none"
+                                data-animation-duration="500" data-fancybox data-src="#animatedModal">Get Started</a>
+                        </li>
+                        {{-- Language Toggler --}}
+                        <li class="nav-item language-toggler">
+                            @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                                <a class="nav-link {{ LaravelLocalization::getCurrentLocaleNative() == $properties['native'] ? 'd-none' : '' }}"
+                                    rel="alternate" hreflang="{{ $localeCode }}"
+                                    href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                                    <img src="{{ asset('front/icons/' . $localeCode . '.png') }}"
+                                        style="width: 22px;">
+                                </a>
+                            @endforeach
+                        </li>
+                    </ul>
+                </nav>
 
-            <div class="side-footer w-100">
-                <ul class="social-icons-simple">
-                    <li><a class="facebook_bg_hvr2 wow fadeInLeft" href="javascript:void(0)"
-                           data-wow-delay="300ms"><i class="fab fa-facebook-f"></i> </a></li>
-                    <li><a class="instagram_bg_hvr2 wow fadeInUp" href="javascript:void(0)"
-                           data-wow-delay="500ms"><i class="fab fa-instagram"></i> </a></li>
-                    <li><a class="twitter_bg_hvr2 wow fadeInRight" href="javascript:void(0)"
-                           data-wow-delay="300ms"><i class="fab fa-twitter"></i> </a></li>
-                </ul>
-                <p>{{ settings()->copyrights }}</p>
-                <p class="marwan-copyrights w-100 d-flex justify-content-center align-items-center">
-                    <span>{{ __('words.marwan_copyrights') }}</span>&nbsp;<a
-                        href="https://marwan.tech/ar/service-request"
-                        target="_blank">{{ __('words.marwan_company') }}</a>
-                </p>
+                <div class="side-footer w-100">
+                    <ul class="social-icons-simple">
+                        <li><a class="facebook_bg_hvr2 wow fadeInLeft" href="javascript:void(0)"
+                                data-wow-delay="300ms"><i class="fab fa-facebook-f"></i> </a></li>
+                        <li><a class="instagram_bg_hvr2 wow fadeInUp" href="javascript:void(0)"
+                                data-wow-delay="500ms"><i class="fab fa-instagram"></i> </a></li>
+                        <li><a class="twitter_bg_hvr2 wow fadeInRight" href="javascript:void(0)"
+                                data-wow-delay="300ms"><i class="fab fa-twitter"></i> </a></li>
+                    </ul>
+                    <p>{{ settings()->copyrights }}</p>
+                    <p class="marwan-copyrights w-100 d-flex justify-content-center align-items-center">
+                        <span>{{ __('words.marwan_copyrights') }}</span>&nbsp;<a
+                            href="https://marwan.tech/ar/service-request"
+                            target="_blank">{{ __('words.marwan_company') }}</a>
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
-    <a id="close_side_menu" href="javascript:void(0);"></a>
-    <!-- End side menu -->
+        <a id="close_side_menu" href="javascript:void(0);"></a>
+        <!-- End side menu -->
 
-    <!--Get Started Model Popup-->
-    <div class="quote-content hidden animated-modal" id="animatedModal">
-        <!--Heading-->
-        <div class="pb-md-5 p-0 text-center">
-            <span class="text-blue font-weight-200 font-20">We are MegaOne Company</span>
-            <h2 class="main-font font-weight-600 text-black mt-2">Lets start your <span
-                    class="text-green js-rotating">project, website</span></h2>
-        </div>
-        <!--Contact Form-->
-        <form class="contact-form" id="modal-contact-form-data">
-            <div class="row">
-                <!--Result-->
-                <div class="col-12" id="quote_result"></div>
+        <!--Get Started Model Popup-->
+        <div class="quote-content hidden animated-modal" id="animatedModal">
+            <!--Heading-->
+            <div class="pb-md-5 p-0 text-center">
+                <span class="text-blue font-weight-200 font-20">We are MegaOne Company</span>
+                <h2 class="main-font font-weight-600 text-black mt-2">Lets start your <span
+                        class="text-green js-rotating">project, website</span></h2>
+            </div>
+            <!--Contact Form-->
+            <form class="contact-form" id="modal-contact-form-data">
+                <div class="row">
+                    <!--Result-->
+                    <div class="col-12" id="quote_result"></div>
 
-                <!--Left Column-->
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <input class="form-control" id="quote_name" name="quoteName" placeholder="Name"
-                               required="" type="text">
+                    <!--Left Column-->
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input class="form-control" id="quote_name" name="quoteName" placeholder="Name"
+                                required="" type="text">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" id="quote_contact" name="userPhone" placeholder="Contact #"
+                                required="" type="text">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" id="quote_type" name="projectType"
+                                placeholder="Project type" required="" type="text">
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <input class="form-control" id="quote_contact" name="userPhone" placeholder="Contact #"
-                               required="" type="text">
-                    </div>
-                    <div class="form-group">
-                        <input class="form-control" id="quote_type" name="projectType"
-                               placeholder="Project type" required="" type="text">
-                    </div>
-                </div>
 
-                <!--Right Column-->
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <input class="form-control" id="quote_email" name="userEmail" placeholder="Email"
-                               required="" type="email">
+                    <!--Right Column-->
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input class="form-control" id="quote_email" name="userEmail" placeholder="Email"
+                                required="" type="email">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" id="quote_address" name="userAddress"
+                                placeholder="City / Country" required="" type="text">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" id="quote_budget" name="quoteBudget" placeholder="Budget"
+                                required="" type="text">
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <input class="form-control" id="quote_address" name="userAddress"
-                               placeholder="City / Country" required="" type="text">
-                    </div>
-                    <div class="form-group">
-                        <input class="form-control" id="quote_budget" name="quoteBudget" placeholder="Budget"
-                               required="" type="text">
-                    </div>
-                </div>
 
-                <!--Full Column-->
-                <div class="col-md-12">
-                    <div class="form-group">
+                    <!--Full Column-->
+                    <div class="col-md-12">
+                        <div class="form-group">
                             <textarea class="form-control" id="userMessage" name="userMessage"
-                                      placeholder="Please explain your project in detail."></textarea>
+                                placeholder="Please explain your project in detail."></textarea>
+                        </div>
                     </div>
-                </div>
 
-                <!--Button-->
-                <div class="col-md-12">
-                    <div class="form-check">
-                        <label class="checkbox-lable font-weight-200 font-16">Contact by phone is preferred
-                            <input type="checkbox">
-                            <span class="checkmark"></span>
-                        </label>
+                    <!--Button-->
+                    <div class="col-md-12">
+                        <div class="form-check">
+                            <label class="checkbox-lable font-weight-200 font-16">Contact by phone is preferred
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <a href="javascript:void(0)"
+                            class="btn btn-large btn-rounded btn-green btn-hvr-up btn-hvr-blue modal_contact_btn"
+                            id="quote_submit_btn">Submit Now</a>
                     </div>
-                    <a href="javascript:void(0)"
-                       class="btn btn-large btn-rounded btn-green btn-hvr-up btn-hvr-blue modal_contact_btn"
-                       id="quote_submit_btn">Submit Now</a>
                 </div>
-            </div>
-        </form>
-    </div>
-</header>
-<!-- END HEADER -->
+            </form>
+        </div>
+    </header>
+    <!-- END HEADER -->

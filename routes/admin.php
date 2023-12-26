@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Dashboard\ConsultationController;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -84,6 +85,11 @@ Route::group([
             Route::resource('contact_requests', 'ContactRequestController');
             Route::get('contact_requests/{contact_request}/reply', 'ContactRequestController@reply')->name('contact_requests.reply');
             Route::post('contact_requests/{contact_request}/send_mail', 'ContactRequestController@send_mail')->name('contact_requests.send_mail');
+
+            //consultation_requests
+            Route::resource('consultation_requests', 'ConsultationController');
+            Route::get('consultation_requests/{consultation_request}/reply', [ConsultationController::class, 'reply'])->name('consultation_requests.reply');
+            Route::post('consultation_requests/{consultation_request}/send_mail', [ConsultationController::class, 'send_mail'])->name('consultation_requests.send_mail');
 
             //course routes
             // Route::get('courses', 'CourseController@index')->name('courses.index');
