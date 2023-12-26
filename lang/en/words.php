@@ -91,6 +91,8 @@ return [
     "our_feature" => "Our Features",
     "about_us" => "About us",
     "contact_info" => "Contact Info",
+    'contact_msg' => 'we\'re here to assist you! Feel freeto get in touch with our team for any inquiries, feedback, or support.',
+
 
 
     "quick_links" => "Quick Links",

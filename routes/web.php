@@ -25,7 +25,7 @@ Route::group([
 
     // Contact
     Route::get('/contact-us', [ContactController::class, 'index'])->name('contact');
-    // Route::post('/contact', [ContactUsController::class, 'create'])->name('contact.save');
+    Route::post('/contact', [ContactController::class, 'create'])->name('contact.save');
 
 
     // Route::get('/', function () {
