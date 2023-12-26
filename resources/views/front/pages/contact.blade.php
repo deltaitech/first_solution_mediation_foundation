@@ -1,12 +1,12 @@
 @extends('front.layouts.master')
 @section('title')
-    {{ trans('words.about_us') }}
+    {{ trans('words.contact_us') }}
 @endsection
 
 @section('content')
     <!--breadcrumb-->
     @include('front.components.breadcrumb', [
-        'name' => __('words.about_us'),
+        'name' => __('words.contact_us'),
         // 'title' => $portfolio->title,
         // 'route' => 'portfolio.index',
     ])
@@ -31,30 +31,72 @@
                     <div class="row mt-5 wow fadeIn" data-wow-delay="200ms">
                         <!-- Address-Box -->
                         <div class="col-12 col-md-6 text-start">
-                            <h4 class="main-font font-16 font-weight-600">Our Address</h4>
-                            <p class="alt-font font-14 light-grey mt-3">123 Stree New York City , United States Of America.
+                            <h4 class="main-font font-16 font-weight-600">@lang('words.address')</h4>
+                            <p class="alt-font font-14 light-grey mt-3">{{ settings()->address }}
                             </p>
                         </div>
                         <!-- Phone-Box -->
-                        <div class="col-12 col-md-6 pt-5 pt-md-0 wow fadeIn text-start" data-wow-delay="400ms">
-                            <h4 class="main-font font-16 font-weight-600">Our Phone</h4>
-                            <p class="alt-font font-14 light-grey mt-3">Office Telephone : 001 01085379709 Mobile : 001
-                                63165370895 </p>
-                        </div>
+
+                        @if ($contacts)
+                            @foreach ($contacts as $contact)
+                                @if (in_array($contact->type, ['mobile', 'phone']))
+                                    @if ($contact->type == 'mobile')
+                                        <div class="col-12 col-md-6 pt-5 pt-md-0 wow fadeIn text-start contact-info"
+                                            data-wow-delay="400ms">
+                                            <h4 class="main-font font-16 font-weight-600">@lang('words.mobile')</h4>
+                                            <p class="alt-font font-14 light-grey mt-3" style="direction: ltr;"> <a
+                                                    href="tel:{{ $contact->contact }}" class="mx-1 contact-details"
+                                                    style="direction: ltr;">{{ $contact->contact }}</a></p>
+                                        </div>
+                                    @elseif($contact->type == 'phone')
+                                        <div class="col-12 col-md-6 pt-5 pt-md-0 wow fadeIn text-start contact-info"
+                                            data-wow-delay="400ms">
+                                            <h4 class="main-font font-16 font-weight-600">@lang('words.phone')</h4>
+                                            <p class="alt-font font-14 light-grey mt-3" style="direction: ltr;"> <a
+                                                    href="tel:{{ $contact->contact }}" class="mx-1 contact-details"
+                                                    style="direction: ltr;">{{ $contact->contact }}</a></p>
+                                        </div>
+                                    @endif
+                                    </p>
+                                @endif
+                            @endforeach
+                        @endif
                     </div>
 
                     <div class="row mt-5">
                         <!-- Email-Box -->
-                        <div class="col-12 col-md-6 wow fadeIn text-start" data-wow-delay="600ms">
-                            <h4 class="main-font font-16 font-weight-600">Our Email</h4>
-                            <p class="alt-font font-14 light-grey mt-3">Main Email : admin@website.com Inquiries :
-                                email@website.com </p>
-                        </div>
+
+                        @if ($contacts)
+                            @foreach ($contacts as $contact)
+                                @if ($contact->type == 'email')
+                                    <div class="col-12 col-md-6 wow fadeIn text-start contact-info" data-wow-delay="600ms">
+                                        <h4 class="main-font font-16 font-weight-600">@lang('words.email')</h4>
+                                        <p class="alt-font font-14 light-grey mt-3">
+                                            <a href="mailto:{{ $contact->contact }}">{{ $contact->contact }}</a>
+                                        </p>
+                                    </div>
+                                @endif
+                            @endforeach
+                        @endif
 
                     </div>
+
+
                 </div>
 
                 <div class="col-12 col-lg-6 contact-form-box">
+                    <div class="toast-part">
+                        <div id="message-success"
+                            class="toast align-items-center border-0 text-bg-success mx-auto text-center w-100"
+                            role="alert" aria-live="assertive" aria-atomic="true">
+                            <div class="toast-content text-center">
+                                <div class="toast-body">
+                                    {{ __('words.sent_successfully') }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <form class="contact-form" id="contact-us" method="post" action="{{ route('contact.save') }}">
                         @method('POST')
                         @csrf
@@ -68,28 +110,28 @@
                                 <div class="form-group">
                                     <input class="form-control" type="text" placeholder="@lang('words.name')"
                                         id="name" name="name">
-                                    <div class="invalid-feedback d-none"></div>
+                                    <div class="invalid-feedback d-none text-start"></div>
                                 </div>
                             </div>
 
                             <div class="col-12 col-md-6">
                                 <div class="form-group">
-                                    <input class="form-control" type="email" placeholder="@lang('words.email')"
+                                    <input class="form-control email-input" type="email" placeholder="@lang('words.email')"
                                         id="email" name="email">
-                                    <div class="invalid-feedback d-none"></div>
+                                    <div class="invalid-feedback d-none text-start"></div>
                                 </div>
                             </div>
                             <div class="col-12 col-md-6">
                                 <div class="form-group">
-                                    <input class="form-control" type="tel" placeholder="@lang('words.phone')"
+                                    <input class="form-control phone-input" type="tel" placeholder="@lang('words.phone')"
                                         id="phone" name="phone">
-                                    <div class="invalid-feedback d-none"></div>
+                                    <div class="invalid-feedback d-none text-start"></div>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-group">
                                     <textarea class="form-control" placeholder="@lang('words.message')" id="message" name="message"></textarea>
-                                    <div class="invalid-feedback d-none"></div>
+                                    <div class="invalid-feedback d-none text-start"></div>
                                 </div>
                             </div>
                             <div class="col-12">
@@ -196,11 +238,11 @@
                         $("#" + key).next().html(value[0]);
                         $("#" + key).next().removeClass('d-none');
                         $("#" + key).addClass('is-invalid');
-                        // setTimeout(() => {
-                        //     $("#" + key).next().fadeOut('fast');
-                        //     $("#" + key).next().addClass('d-none');
-                        //     $("#" + key).removeClass('is-invalid');
-                        // }, 5000);
+                        setTimeout(() => {
+                            $("#" + key).next().fadeOut('fast');
+                            $("#" + key).next().addClass('d-none');
+                            $("#" + key).removeClass('is-invalid');
+                        }, 5000);
                     });
 
                 }

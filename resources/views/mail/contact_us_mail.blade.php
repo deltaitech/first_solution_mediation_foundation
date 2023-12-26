@@ -9,7 +9,7 @@
     <meta name="x-apple-disable-message-reformatting">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="telephone=no" name="format-detection">
-    <title>{{ __('user.header.quote_request') }}</title>
+    <title>{{ __('words.contact_request') }}</title>
     <!--[if (mso 16)]>
     <style type="text/css">
         a {
@@ -63,14 +63,7 @@
 
         .es-desk-hidden {
             display: none;
-
-            float: {
-                    {
-                    (App::isLocale('ar') ? 'right' : 'left')
-                }
-            }
-
-            ;
+            float: {{ App::isLocale('ar') ? 'right' : 'left' }};
             overflow: hidden;
             width: 0;
             max-height: 0;
@@ -184,13 +177,7 @@
             .es-m-txt-l h1,
             .es-m-txt-l h2,
             .es-m-txt-l h3 {
-                text-align: {
-                        {
-                        (App::isLocale('ar') ? 'right' : 'left')
-                    }
-                }
-
-                !important
+                text-align: {{ App::isLocale('ar') ? 'right' : 'left' }} !important
             }
 
             .es-m-txt-r img,
@@ -550,14 +537,19 @@
                                                                 <td align="center"
                                                                     style="padding:0;Margin:0;padding-top:10px;padding-bottom:15px">
                                                                     <h1
-                                                                        style="Margin:0;line-height:36px;mso-line-height-rule:exactly;font-family:'trebuchet ms', helvetica, sans-serif;font-size:30px;font-style:normal;font-weight:normal;color:#333333">
-                                                                        {{ __('words.reply_msg') }}
+                                                                        style="Margin:0;line-height:36px;mso-line-height-rule:exactly;font-family:'trebuchet ms', helvetica, sans-serif;font-size:30px;font-style:normal;font-weight:normal;color:#263139">
+                                                                        {{ __('words.contact_details') }}
                                                                     </h1>
                                                                 </td>
                                                             </tr>
                                                             <tr style="border-collapse:collapse">
                                                                 <td align="center"
                                                                     style="Margin:0;padding-top:5px;padding-bottom:5px;padding-left:40px;padding-right:40px">
+                                                                    <p
+                                                                        style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#263139;font-size:14px;text-transform:capitalize">
+                                                                        {{ __('words.contact_request') }} :
+                                                                        {{ $contact_us->name }}
+                                                                    </p>
                                                                 </td>
                                                             </tr>
                                                         </table>
@@ -589,15 +581,13 @@
                                                             style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:separate;border-spacing:0px;border-left:1px solid #efefef;border-right:1px solid #efefef;border-top:1px solid #efefef;border-bottom:1px solid #efefef;background-color:#fafafa"
                                                             width="100%" cellspacing="0" cellpadding="0"
                                                             bgcolor="#fafafa" role="presentation">
-                                                            <tr style="border-collapse:collapse">
-                                                                <td align="{{ App::isLocale('ar') ? 'right' : 'left' }}"
-                                                                    style="padding:20px;Margin:0">
-                                                                    <h4
-                                                                        style="Margin:0;line-height:22px;mso-line-height-rule:exactly;font-family:'trebuchet ms', helvetica, sans-serif;font-size:18px">
-                                                                        {{ __('words.reply_content') }} :
-                                                                    </h4>
-                                                                </td>
-                                                            </tr>
+                                                            {{-- <tr style="border-collapse:collapse">
+                                                            <td align="{{(App::isLocale('ar') ? 'right' : 'left')}}"
+                                                                style="padding:20px;Margin:0"><h4
+                                                                    style="Margin:0;line-height:22px;mso-line-height-rule:exactly;font-family:'trebuchet ms', helvetica, sans-serif;font-size:18px">
+                                                                    {{__('words.contact_details')}} : {{$contact_us->fname}} {{$contact_us->lname}}</h4>
+                                                            </td>
+                                                        </tr> --}}
                                                             <tr style="border-collapse:collapse">
                                                                 <td align="{{ App::isLocale('ar') ? 'right' : 'left' }}"
                                                                     style="padding:0;Margin:0;padding-bottom:20px;padding-left:20px;padding-right:20px">
@@ -609,21 +599,38 @@
                                                                         <tr style="border-collapse:collapse">
                                                                             <td
                                                                                 style="padding:0;Margin:0;font-size:14px;line-height:21px;text-transform:capitalize">
-                                                                                <strong>
-                                                                                    {{ __('words.subject') }}:</strong>
-                                                                                <span>{{ $request_data['subject'] }}</span>
+                                                                                <strong> {{ __('words.name') }}
+                                                                                    :
+                                                                                </strong>{{ $contact_us->name }}
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr style="border-collapse:collapse">
+                                                                            <td
+                                                                                style="padding:0;Margin:0;font-size:14px;line-height:21px;text-align:start">
+                                                                                <strong>{{ __('words.phone') }}:
+                                                                                </strong><span
+                                                                                    dir="ltr">{{ $contact_us->phone }}</span>
                                                                             </td>
                                                                         </tr>
                                                                         <tr style="border-collapse:collapse">
                                                                             <td
                                                                                 style="padding:0;Margin:0;font-size:14px;line-height:21px">
-                                                                                <strong>{{ __('words.message') }}:</strong>
-                                                                                {!! $request_data['message'] !!}
+                                                                                <strong>{{ __('words.email') }}
+                                                                                    : </strong>{{ $contact_us->email }}
+                                                                            </td>
+                                                                        </tr>
+
+                                                                        <tr style="border-collapse:collapse">
+                                                                            <td
+                                                                                style="padding:0;Margin:0;font-size:14px;line-height:21px">
+                                                                                <strong>{{ __('words.message') }}
+                                                                                    :
+                                                                                </strong><br />{{ $contact_us->message }}
                                                                             </td>
                                                                         </tr>
                                                                     </table>
                                                                     <p
-                                                                        style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:28px;color:#333333;font-size:14px">
+                                                                        style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:28px;color:#263139;font-size:14px">
                                                                         <br>
                                                                     </p>
                                                                 </td>
@@ -653,7 +660,7 @@
                                                 style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
                                                 <tr style="border-collapse:collapse">
                                                     <td align="{{ App::isLocale('ar') ? 'right' : 'left' }}"
-                                                        style="padding:0;Margin:0;width:560px;text-align: center;font-size: 10px;color:#ffffff">
+                                                        style="padding:0;Margin:0;width:560px;text-align: center;font-size: 10px;color: #ffffff">
                                                         {{ __('words.rights') . settings()->website_title . '©' . ' ' . now()->year }}
                                                     </td>
                                                 </tr>

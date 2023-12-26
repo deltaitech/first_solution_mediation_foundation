@@ -40,13 +40,17 @@
                         </div>
                     </div>
 
+
+
                     <div class="col-md">
                         <div class="mb-7 bg-light p-5 rounded h-100">
                             <div class="card-title">
                                 <h5 class="font-weight-bolder text-dark">{{ __('words.email') }}
                                     :</h5>
                             </div>
-                            {{ $contact_request->email }}
+                            <div style="direction: ltr !important;">
+                                {{ $contact_request->email }}
+                            </div>
                         </div>
                     </div>
 
@@ -56,7 +60,9 @@
                                 <h5 class="font-weight-bolder text-dark">{{ __('words.phone') }}
                                     :</h5>
                             </div>
-                            {{ $contact_request->phone }}
+                            <div style="direction: ltr !important;">
+                                {{ $contact_request->phone }}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -82,6 +88,18 @@
                     </div>
                 </div>
             </div>
+            @permission('reply-contact_requests')
+                <div class="card-footer">
+                    <div class="row">
+                        <div class="col-4">
+                            <a href="{{ route('contact_requests.reply', $contact_request->id) }}"
+                                class="btn btn-block btn-outline-info">
+                                {{ __('words.reply') }}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            @endpermission
         </div>
     </div>
 @endsection

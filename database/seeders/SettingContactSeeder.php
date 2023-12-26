@@ -29,7 +29,7 @@ class SettingContactSeeder extends Seeder
         //whatsapp
         $setting->contact()->create([
             "status" => "1",
-            "contact" => "+966558555555",
+            "contact" => "+966558666666",
             "type" => "whatsapp",
             "icon" => "fab fa-whatsapp",
         ]);

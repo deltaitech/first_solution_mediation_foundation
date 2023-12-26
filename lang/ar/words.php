@@ -95,6 +95,35 @@ return [
     "contact_info" => "بيانات التواصل",
     "loading" => "جارى الإرسال",
     "contact_msg" => "نحن هنا لمساعدتك! لا تتردد في التواصل مع فريقنا لأية استفسارات أو تعليقات أو دعم.",
+    "sent_successfully" => "تم الإرسال بنجاح",
+    'reply_to' => 'رد على',
+
+
+
+    "contact_requests" => "طلبات تواصل معنا",
+    'show_contact_requests' => 'رسائل طلبات التواصل',
+    'show_quote_requests' => 'رسائل طلبات عرض السعر',
+
+    'quote_request_reply' => 'تم الرد على الطلب بنجاح',
+    'quote_requests' => 'طلبات عرض السعر',
+    'quote_request' => 'طلب عرض السعر',
+
+    "contact_details" => "تفاصيل الإتصال",
+    "contact_info" => "تفاصيل الإتصال",
+    "contact_request" => "طلب إتصال مقدم من",
+    "message" => "الرسالة",
+    "rights" => "جميع الحقوق محفوظة بواسطة ",
+
+    'reply_for_msg' => 'رد على رسالة تواصل',
+    'reply_for_request' => 'رد على رسالة طلب عرض سعر',
+    'reply_to' => 'رد على',
+
+    'reply_to_contact' => 'رد على رسالة تواصل',
+    'reply' => 'رد',
+    'reply_msg' => 'رد على رسالتك',
+    'reply_request' => 'رد على طلبك',
+    'reply_content' => 'محتوى الرسالة',
+    'msg_reply' => 'تم الرد على الرسالة بنجاح',
 
 
     "quick_links" => "روابط مهمة",

@@ -56,7 +56,7 @@ class ContactRequestController extends Controller
         return view('admin.contact_requests.reply', compact('contact_request'));
     }
 
-    public function send_mail(ReplyRequest $request)
+    public function send_mail(Request $request)
     {
         // return $request;
         try {
@@ -64,7 +64,7 @@ class ContactRequestController extends Controller
             $request_data = $request->only(['subject', 'message']);
 
             Mail::to($contact->email)->send(new ReplyMail($request_data));
-            return redirect()->route('contact_requests.index')->with(['success' => __('message.reply')]);
+            return redirect()->route('contact_requests.index')->with(['success' => __('words.msg_reply')]);
         } catch (\Exception $e) {
             return redirect()->back()->with(['error' => __('message.something_wrong')]);
         }

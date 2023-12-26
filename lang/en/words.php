@@ -92,6 +92,30 @@ return [
     "about_us" => "About us",
     "contact_info" => "Contact Info",
     'contact_msg' => 'we\'re here to assist you! Feel freeto get in touch with our team for any inquiries, feedback, or support.',
+    "loading" => "Loading",
+    "sent_successfully" => "Sent Successfully",
+    'reply_to' => 'Reply To',
+    'reply_to_contact' => 'Reply To Contact Request',
+    'leave_msg' => 'Leave Message',
+
+    'quote_request_reply' => 'Reply To Quotation Request Sent Successfully',
+    'quote_requests' => 'Quotation Requests',
+    'quote_request' => 'Quotation Request',
+
+    "request_details" => "Quotation Request Details",
+    "request_details_from" => "Quotation Request From",
+    'reply_request_content' => 'Reply For Your Quotation Request',
+
+
+
+    'reply_for_msg' => 'Reply For Contact Message',
+    'reply_for_request' => 'Reply For Quotation Request Message',
+
+    'reply' => 'Reply',
+    'reply_msg' => 'Reply For Your Message',
+    'reply_request' => 'Reply For Your Request',
+    'reply_content' => 'Message Content',
+    'msg_reply' => 'Reply To Message Sent Successfully',
 
 
 
