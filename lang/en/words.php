@@ -124,6 +124,8 @@ return [
     'reply_request' => 'Reply For Your Request',
     'reply_content' => 'Message Content',
     'msg_reply' => 'Reply To Message Sent Successfully',
+    'consultation_request_mail' => 'Consultation Request',
+    'reply_consultation_msg' => 'In response to your consultation request',
 
 
 

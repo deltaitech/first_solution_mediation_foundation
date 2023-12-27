@@ -131,6 +131,8 @@ return [
     'reply_request' => 'رد على طلبك',
     'reply_content' => 'محتوى الرسالة',
     'msg_reply' => 'تم الرد على الرسالة بنجاح',
+    'consultation_request_mail' => 'طلب إستشارة',
+    'reply_consultation_msg' => 'رداً علب طلب إستشارتك',
 
 
     "quick_links" => "روابط مهمة",

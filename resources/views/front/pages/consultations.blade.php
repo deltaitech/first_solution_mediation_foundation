@@ -24,7 +24,7 @@
                 </div>
 
                 <!-- Contact-us -->
-                <div class="row text-center">
+                <div class="row text-center d-flex justify-content-center align-items-center">
 
 
                     <div class="col-12 col-lg-6 contact-form-box">
@@ -83,7 +83,7 @@
                                         <button class="button1" type="submit" id='submit-btn'>
                                             <span id='btn-text'>@lang('words.send')</span>
                                             <span class="spinner-border spinner-border-sm d-none" role="status"
-                                                id="loading-spinner"></span>
+                                                  id="loading-spinner"></span>
                                             <span class="d-none" id="loading-text">@lang('words.loading')</span>
                                         </button>
                                     </div>
@@ -99,7 +99,7 @@
     <!-- END CONTACT-FORM -->
 @endsection
 
-@push('js')
+@push('script')
     <script>
         $('#message-success').hide();
 
