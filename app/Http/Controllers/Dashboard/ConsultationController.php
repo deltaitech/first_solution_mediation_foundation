@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Dashboard;
 use App\Http\Controllers\Controller;
 use App\Mail\ConsultationReplyMail;
 use App\Models\Consultation;
+use App\Models\Service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -28,7 +29,7 @@ class ConsultationController extends Controller
             $consultation_requests = $this->consultation_request->latest('id')->get();
             return view('admin.consultation_requests.index', compact('consultation_requests'));
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' =>  __('message.something_wrong')]);
+            return redirect()->back()->with(['error' => __('message.something_wrong')]);
         }
     }
 

@@ -14,4 +14,10 @@ class Consultation extends Model
     protected $guarded = [];
 
     public $timestamps = true;
+
+    // relations start
+    public function service(){
+        return $this->belongsTo(Service::class);
+    }
+    // relations end
 }

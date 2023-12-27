@@ -66,6 +66,18 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="col-md">
+                        <div class="mb-7 bg-light p-5 rounded h-100">
+                            <div class="card-title">
+                                <h5 class="font-weight-bolder text-dark">{{ __('words.service') }}
+                                    :</h5>
+                            </div>
+                            <div style="direction: ltr !important;">
+                                {{ $consultation_request->service->title }}
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="row">

@@ -30,8 +30,8 @@
                     <div class="col-12 col-lg-6 contact-form-box">
                         <div class="toast-part">
                             <div id="message-success"
-                                class="toast align-items-center border-0 text-bg-success mx-auto text-center w-100"
-                                role="alert" aria-live="assertive" aria-atomic="true">
+                                 class="toast align-items-center border-0 text-bg-success mx-auto text-center w-100"
+                                 role="alert" aria-live="assertive" aria-atomic="true">
                                 <div class="toast-content text-center">
                                     <div class="toast-body">
                                         {{ __('words.sent_successfully') }}
@@ -40,8 +40,7 @@
                             </div>
                         </div>
 
-                        <form class="contact-form" id="consultation" method="post"
-                            action="{{ route('consultation.save') }}">
+                        <form class="contact-form" id="consultation" method="post">
                             @method('POST')
                             @csrf
                             <div class="row">
@@ -53,7 +52,7 @@
                                 <div class="col-12">
                                     <div class="form-group">
                                         <input class="form-control" type="text" placeholder="@lang('words.name')"
-                                            id="name" name="name">
+                                               id="name" name="name">
                                         <div class="invalid-feedback d-none text-start"></div>
                                     </div>
                                 </div>
@@ -61,25 +60,38 @@
                                 <div class="col-12 col-md-6">
                                     <div class="form-group">
                                         <input class="form-control email-input" type="email"
-                                            placeholder="@lang('words.email')" id="email" name="email">
+                                               placeholder="@lang('words.email')" id="email" name="email">
                                         <div class="invalid-feedback d-none text-start"></div>
                                     </div>
                                 </div>
                                 <div class="col-12 col-md-6">
                                     <div class="form-group">
                                         <input class="form-control phone-input" type="tel"
-                                            placeholder="@lang('words.phone')" id="phone" name="phone">
+                                               placeholder="@lang('words.phone')" id="phone" name="phone">
                                         <div class="invalid-feedback d-none text-start"></div>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <textarea class="form-control" placeholder="@lang('words.message')" id="message" name="message"></textarea>
+                                        <select class="form-control form-select" name="service_id" id="service" aria-label="Default select example">
+                                            <option selected>@lang('words.choose_service')</option>
+                                            @foreach($services as $service)
+                                                <option value="{{$service->id}}">{{$service->title}}</option>
+                                            @endforeach
+                                        </select>
                                         <div class="invalid-feedback d-none text-start"></div>
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <div class="py-3 d-flex justify-content-center align-items-center" data-aos="fade-down">
+                                    <div class="form-group">
+                                        <textarea class="form-control" placeholder="@lang('words.message')" id="message"
+                                                  name="message"></textarea>
+                                        <div class="invalid-feedback d-none text-start"></div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="py-3 d-flex justify-content-center align-items-center"
+                                         data-aos="fade-down">
                                         <button class="button1" type="submit" id='submit-btn'>
                                             <span id='btn-text'>@lang('words.send')</span>
                                             <span class="spinner-border spinner-border-sm d-none" role="status"
@@ -103,13 +115,13 @@
     <script>
         $('#message-success').hide();
 
-        $('#consultation').submit(function(e) {
+        $('#consultation').submit(function (e) {
             e.preventDefault();
             let formData = new FormData(this);
-            $('.form-control').each(function() {
+            $('.form-control').each(function () {
                 $(this).attr('disabled', true);
             });
-            $('.form-control-md').each(function() {
+            $('.form-control-md').each(function () {
                 $(this).attr('disabled', true);
             });
 
@@ -128,10 +140,10 @@
                 contentType: false,
                 processData: false,
                 success: (response) => {
-                    $('.form-control').each(function() {
+                    $('.form-control').each(function () {
                         $(this).removeAttr('disabled');
                     });
-                    $('.form-control-md').each(function() {
+                    $('.form-control-md').each(function () {
                         $(this).removeAttr('disabled');
                     });
 
@@ -151,18 +163,18 @@
                         $('#message-success').removeClass('show');
                     }, 5000);
                 },
-                error: function(response) {
-                    $('.form-control').each(function() {
+                error: function (response) {
+                    $('.form-control').each(function () {
                         $(this).removeAttr('disabled');
                     });
-                    $('.form-control-md').each(function() {
+                    $('.form-control-md').each(function () {
                         $(this).removeAttr('disabled');
                     });
                     $('#submit-btn').attr('disabled', false); // disable
                     $("#loading-spinner").addClass('d-none'); // spinner
                     $("#loading-text").addClass('d-none'); // spinner text
                     $("#btn-text").removeClass('d-none'); // btn text
-                    $.each(response.responseJSON.errors, function(key, value) {
+                    $.each(response.responseJSON.errors, function (key, value) {
                         $("#" + key).next().show();
                         $("#" + key).next().html(value[0]);
                         $("#" + key).next().removeClass('d-none');

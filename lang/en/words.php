@@ -44,6 +44,7 @@ return [
     "active" => "Active",
     "inactive" => "Inactive",
     "choose" => "Choose...",
+    "choose_service" => "Choose Service...",
     "status" => "Status",
     "cover" => "Cover Image",
     "images" => "Images",
@@ -98,6 +99,7 @@ return [
     'reply_to' => 'Reply To',
     'reply_to_contact' => 'Reply To Contact Request',
     'leave_msg' => 'Leave Message',
+    'service' => 'Service',
 
     'quote_request_reply' => 'Reply To Quotation Request Sent Successfully',
     'quote_requests' => 'Quotation Requests',

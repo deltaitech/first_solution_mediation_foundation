@@ -623,6 +623,14 @@
                                                                         <tr style="border-collapse:collapse">
                                                                             <td
                                                                                 style="padding:0;Margin:0;font-size:14px;line-height:21px">
+                                                                                <strong>{{ __('words.service') }}
+                                                                                    :
+                                                                                </strong>{{ $consultation_request->service->title }}
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr style="border-collapse:collapse">
+                                                                            <td
+                                                                                style="padding:0;Margin:0;font-size:14px;line-height:21px">
                                                                                 <strong>{{ __('words.message') }}
                                                                                     :
                                                                                 </strong><br />{{ $consultation_request->message }}

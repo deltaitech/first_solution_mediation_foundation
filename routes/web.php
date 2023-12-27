@@ -30,7 +30,7 @@ Route::group([
 
     // Consultation
     Route::get('/consultation-request', [ConsultationController::class, 'index'])->name('consultation');
-    Route::post('/consultation-request', [ConsultationController::class, 'create'])->name('consultation.save');
+    Route::post('/consultation-request', [ConsultationController::class, 'store'])->name('consultation.save');
 
 
     // Route::get('/', function () {

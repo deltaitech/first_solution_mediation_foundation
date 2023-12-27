@@ -42,6 +42,7 @@ return [
     "active" => "مفعل",
     "inactive" => "غير مفعل",
     "choose" => "إختر ...",
+    "choose_service" => "إختر خدمة...",
     "status" => "الحالة",
     "cover" => "صورة الغلاف",
     "images" => "الصور",
@@ -104,6 +105,7 @@ return [
 
     "consultation_details" => "تفاصيل طلب الإستشارة",
     "consultation_request_from" => "طلب إستشارة مقدم من: ",
+    'service' => 'الخدمة',
 
 
 
