@@ -13,16 +13,5 @@ return [
         "contact_us" => ["read", "delete", "reply"],
         "contact_requests"   => ["read", "delete", "reply"],
         "consultation_requests" => ["read", "delete", "reply"],
-
-        // "categories" => ["read", "create", "update", "delete"],
-        // "products" => ["read", "create", "update", "delete"],
-        // "projects" => ["read", "create", "update", "delete"],
-        // "teams" => ["read", "create", "update", "delete"],
-        // "testimonials" => ["read", "create", "update", "delete"],
-        // "portfolios" => ["read", "create", "update", "delete"],
-        // "blog" => ["read", "create", "update", "delete"],
-        // "faqs" => ["read", "create", "update", "delete"],
-        // "courses" => ["read", "create", "export"],
-        // "news_letters" => ["read", "show_subscribed_users", "delete_subscribed_users", "create", "resend", "delete",]
     ],
 ];

@@ -819,6 +819,7 @@ footer .aboutus .description {
 .contact .info p.contacts a {
 	color: var(--secondary);
 	text-decoration: none;
+	text-wrap: nowrap;
 }
 
 .contact .info p.contacts a:hover {

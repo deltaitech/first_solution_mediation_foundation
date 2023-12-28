@@ -28,55 +28,23 @@ Route::group([
             Route::get('my-profile', 'AdminUserController@profile')->name('admin.profile');
             Route::put('my-profile/{id}/update', 'AdminUserController@updateProfile')->name('admin.profile.update');
 
-            //projects routes
-            //            Route::resource('projects', 'ProjectController');
-
             //slider routes
             Route::resource('sliders', 'SliderController');
 
             //features routes
             Route::resource('features', 'FeatureController');
 
-            //category routes
-            // Route::resource('categories', 'CategoryController');
-
-            //product routes
-            // Route::resource('products', 'ProductController');
-
             //product routes
             Route::resource('services', 'ServiceController');
 
-            //product routes
-            // Route::resource('projects', 'ProjectController');
-
-            //teams routes
-            // Route::resource('teams', 'TeamController');
-
-            //testimonials routes
-            // Route::resource('testimonials', 'TestimonialController');
-
             //partners routes
             Route::resource('partners', 'PartnerController');
-
-            //portfolios routes
-            // Route::resource('portfolios', 'PortfolioController');
-
-            //blog routes
-            // Route::resource('blog', 'BlogController');
-
-            //FAQ routes
-            // Route::resource('faqs', 'FaqController');
 
             //pages routes
             Route::resource('pages', 'PageController');
 
             //contact routes
             Route::resource('contacts', 'SettingContactController');
-
-            //news-letter routes
-            // Route::resource('news-letters', 'NewsLetterController');
-            // Route::get('subscribed-users', 'NewsLetterController@subscribedUsers')->name('news-letters.subscribed');
-            // Route::post('subscribed-users/delete/{id}', 'NewsLetterController@deleteSubscribedUsers')->name('news-letters.delete_subscribed_users');
 
             //setting routes
             Route::resource('settings', 'SettingController');
@@ -90,13 +58,6 @@ Route::group([
             Route::resource('consultation_requests', 'ConsultationController');
             Route::get('consultation_requests/{consultation_request}/reply', [ConsultationController::class, 'reply'])->name('consultation_requests.reply');
             Route::post('consultation_requests/{consultation_request}/send_mail', [ConsultationController::class, 'send_mail'])->name('consultation_requests.send_mail');
-
-            //course routes
-            // Route::get('courses', 'CourseController@index')->name('courses.index');
-            // Route::get('courses/{id}/show', 'CourseController@index')->name('courses.show');
-            // Route::get('courses/create', 'CourseController@create')->name('courses.create');
-            // Route::post('courses/import', 'CourseController@import')->name('courses.import');
-            // Route::get('courses/export', 'CourseController@export')->name('courses.export');
         });
     });
 });

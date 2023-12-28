@@ -21,8 +21,8 @@ class PageRequest extends FormRequest
             'video' => 'nullable|url',
         ];
         foreach (config('translatable.locales') as $locale) {
-            $rules += [$locale . '.title' => ['required', 'string', Rule::unique('page_translations', 'title')->ignore($this->id, 'page_id')]];
-            $rules += [$locale . '.sub_title' => ['nullable', 'string','max:200']];
+            $rules += [$locale . '.title' => ['required_if:has_title,1', 'string', Rule::unique('page_translations', 'title')->ignore($this->id, 'page_id')]];
+            $rules += [$locale . '.sub_title' => ['nullable', 'string', 'max:200']];
             $rules += [$locale . '.description' => ['nullable', 'string']];
         }
 
