@@ -94,6 +94,7 @@ footer .icon::before {
 	transition: 0.1s;
 }
 
+
 /* *********************** global  ***************************/
 
 /************************* Preloader Start*************************/
@@ -1851,8 +1852,22 @@ footer .info .icon {
 	background-color: unset !important;
 }
 
-.contact-form .form-control.services-select {
+.contact-form .form-select.services-select {
 	padding-bottom: 0px;
+	color: #9b9b9b;
+	border-radius: unset !important;
+	border-top:unset !important;
+	border-right:unset !important;
+	border-left:unset !important;
+	font-size: 14px !important;
+}
+
+.contact-form .form-select.services-select:hover {
+	cursor: pointer;
+}
+
+.contact-form .form-select.services-select:focus {
+	border-bottom: 1px solid var(--secondary);
 }
 
 /* **************************** contact us page ****************************** */

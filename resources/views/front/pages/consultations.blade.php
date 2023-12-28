@@ -73,7 +73,7 @@
                                 </div>
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <select class="form-control form-select services-select" name="service_id"
+                                        <select class="form-select services-select" name="service_id"
                                             id="service" aria-label="Default select example">
                                             <option selected>@lang('words.choose_service')</option>
                                             @foreach ($services as $service)
