@@ -1846,4 +1846,12 @@ footer .info .icon {
 	color: var(--secondary);
 }
 
+.contact-form .form-control.services-select {
+	background-color: unset !important;
+}
+
+.contact-form .form-control.services-select {
+	padding-bottom: 0px;
+}
+
 /* **************************** contact us page ****************************** */

@@ -9,7 +9,7 @@
                 <div class="admission-text">
                     {{-- <p class="sub-heading text-white m-0">We Believe that education is for everyone.</p> --}}
                     <p class="main-heading text-white mt-2 mb-4">{!! $separator->description !!}</p>
-                    <a class="button1">@lang('words.request_consultation')</a>
+                    <a href="{{ route('consultation') }}" class="button1">@lang('words.request_consultation')</a>
 
 
                 </div>
