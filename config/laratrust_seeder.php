@@ -7,7 +7,7 @@ return [
         "services" => ["read", "create", "update", "delete"],
         "partners" => ["read", "create", "update", "delete"],
         "features" => ["read", "update", "delete"],
-        "pages" => ["read", "create", "update"],
+        "pages" => ["read", "update"],
         "contacts" => ["read", "create", "update", "delete"],
         "settings" => ["read", "update"],
         "contact_us" => ["read", "delete", "reply"],

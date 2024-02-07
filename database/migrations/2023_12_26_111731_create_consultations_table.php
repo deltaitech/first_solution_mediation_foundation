@@ -15,11 +15,11 @@ return new class extends Migration
     {
         Schema::create('consultations', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->nullable();
+            $table->string('organization_name')->nullable();
             $table->string('email')->nullable();
             $table->string('phone')->nullable();
             $table->unsignedBigInteger('service_id')->nullable();
-            $table->longText('message')->nullable();
+            $table->longText('notes')->nullable();
             $table->timestamps();
         });
     }
