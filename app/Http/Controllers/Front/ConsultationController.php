@@ -39,6 +39,11 @@ class ConsultationController extends Controller
     public function store(ConsultationRequest $request)
     {
         try {
+            if (!$request->has('facility_have_financial'))
+                $request->request->add(['facility_have_financial' => 0]);
+            else
+                $request->request->add(['facility_have_financial' => 1]);
+
             $requested_data = $request->except('_token');
             $consultation_request = $this->consultation->create($requested_data);
             Mail::to(settings()->contact_email)->send(new \App\Mail\ConsultationRequestMail($consultation_request));

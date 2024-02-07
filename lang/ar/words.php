@@ -90,8 +90,8 @@ return [
     "export" => "تصدير",
     "read_more" => "إقرأ المزيد",
     "show_more" => "شاهد المزيد",
-    "request_consultation" => "طلب إستشارة مجانية",
-    "request_consultation_now" => "أطلب إستشارة مجانية الآن",
+    "request_consultation" => "نموذج تقديم طلب وساطة",
+    "request_consultation_now" => "قدم طلب وساطة الآن",
     "our_feature" => "ما يميزنا",
     "about_us" => "من نحن",
     "contact_info" => "بيانات التواصل",
@@ -100,11 +100,11 @@ return [
     "sent_successfully" => "تم الإرسال بنجاح",
     'reply_to' => 'رد على',
 
-    "consultation_requests" => "طلبات الإستشارات",
-    'show_consultation_requests' => 'رسائل طلبات الإستشارات',
+    "consultation_requests" => "طلبات الوساطة",
+    'show_consultation_requests' => 'رسائل طلبات الوساطة',
 
-    "consultation_details" => "تفاصيل طلب الإستشارة",
-    "consultation_request_from" => "طلب إستشارة مقدم من: ",
+    "consultation_details" => "تفاصيل طلب الوساطة",
+    "consultation_request_from" => "طلب وساطة مقدم من: ",
     'service' => 'الخدمة',
 
 
@@ -133,8 +133,8 @@ return [
     'reply_request' => 'رد على طلبك',
     'reply_content' => 'محتوى الرسالة',
     'msg_reply' => 'تم الرد على الرسالة بنجاح',
-    'consultation_request_mail' => 'طلب إستشارة',
-    'reply_consultation_msg' => 'رداً علب طلب إستشارتك',
+    'consultation_request_mail' => 'طلب وساطة',
+    'reply_consultation_msg' => 'رداً علب طلب الوساطة',
 
 
     "quick_links" => "روابط مهمة",
@@ -369,4 +369,16 @@ return [
     "contact_email" => "البريد الالكتروني الافتراضي للإرسال والآستقبال الخاص بالاتصال",
     "newsletter_email" => "البريد الالكتروني الافتراضي للإرسال والآستقبال الخاص بالقائمة البريدية",
     "whatsapp" => "واتساب",
+    "organization_name" => "إسم المنشأة",
+    "falling_facility" => "الكيان القانوني للمنشأة",
+    "what_falling_facility" => "ما هو الكيان القانوني لمنشأتك؟",
+    "facility_have_financial" => "هل لدى المنشأة قوائم مالية؟",
+    "does_facility_have_financial" => "هل لدى منشأتك قوائم مالية (ميزانيات) ؟",
+    "financial_statements" => "القوائم المالية (الميزانيات)",
+    "revenues" => "الإيرادات (المبيعات) في 2023",
+    "notes" => "ملاحظات",
+    'company' => "شركة",
+    'organization' => "مؤسسة",
+    'internal' => 'داخلية',
+    'audited' => 'مدققة',
 ];

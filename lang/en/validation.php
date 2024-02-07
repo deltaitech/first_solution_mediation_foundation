@@ -32,7 +32,7 @@ return [
         "string" => "The :attribute must be between :min and :max characters.",
         "array" => "The :attribute must have between :min and :max items.",
     ],
-    "boolean" => "The :attribute field must be true or false.",
+    "boolean" => "The :attribute field must be yes or no.",
     "confirmed" => "The :attribute confirmation does not match.",
     "current_password" => "The password is incorrect.",
     "date" => "The :attribute is not a valid date.",
@@ -227,4 +227,6 @@ return [
         "images" => "images",
     ],
     "insurance_amount" => "Insurance amount",
+    'true' => 'yes',
+    'false' => 'no',
 ];

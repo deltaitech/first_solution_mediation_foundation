@@ -10,7 +10,7 @@
             </li>
             <li class="breadcrumb-item">
                 <a href="{{ route('consultation_requests.index') }}"
-                    class="text-muted">{{ __('words.show_consultation_requests') }}</a>
+                   class="text-muted">{{ __('words.show_consultation_requests') }}</a>
             </li>
             <li class="breadcrumb-item">
                 <apan class="text-muted">{{ __('words.show_consultation_requests') }}</apan>
@@ -30,17 +30,17 @@
         </div>
         <div class="card-body p-10">
             <div class="tab-content">
+
                 <div class="row mb-5">
                     <div class="col-md">
                         <div class="mb-7 bg-light p-5 rounded h-100">
                             <div class="card-title">
-                                <h5 class="font-weight-bolder text-dark">{{ __('words.name') }}
+                                <h5 class="font-weight-bolder text-dark">{{ __('words.organization_name') }}
                                     :</h5>
                             </div>
-                            <p class="m-0 text-capitalize">{{ $consultation_request->name }}</p>
+                            <p class="m-0">{{ $consultation_request->organization_name }}</p>
                         </div>
                     </div>
-
 
 
                     <div class="col-md">
@@ -66,8 +66,58 @@
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="col-md">
+                <div class="row mb-5">
+                    <div class="col">
+                        <div class="mb-7 bg-light p-5 rounded h-100">
+                            <div class="card-title">
+                                <h5 class="font-weight-bolder text-dark">{{ __('words.falling_facility') }}
+                                    :</h5>
+                            </div>
+                            <div>
+                                {{ $consultation_request->falling_facility }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="mb-7 bg-light p-5 rounded h-100">
+                            <div class="card-title">
+                                <h5 class="font-weight-bolder text-dark">{{ __('words.facility_have_financial') }}</h5>
+                            </div>
+                            <div>
+                                {{ $consultation_request->getFacilityHaveFinancial() }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="mb-7 bg-light p-5 rounded h-100">
+                            <div class="card-title">
+                                <h5 class="font-weight-bolder text-dark">{{ __('words.financial_statements') }}:</h5>
+                            </div>
+                            <div>
+                                {{ $consultation_request->financial_statements }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="mb-7 bg-light p-5 rounded h-100">
+                            <div class="card-title">
+                                <h5 class="font-weight-bolder text-dark">{{ __('words.revenues') }}:</h5>
+                            </div>
+                            <div>
+                                {{ $consultation_request->revenues }}
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row mb-5">
+                    <div class="col">
                         <div class="mb-7 bg-light p-5 rounded h-100">
                             <div class="card-title">
                                 <h5 class="font-weight-bolder text-dark">{{ __('words.service') }}
@@ -78,10 +128,8 @@
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="row">
-                    <div class="col-md-2">
+                    <div class="col">
                         <div class="bg-light p-5 rounded h-100">
                             <div class="card-title">
                                 <h5 class="font-weight-bolder text-dark">{{ __('words.created_at') }}:</h5>
@@ -89,29 +137,43 @@
                             <p class="m-0">{{ formatDate($consultation_request->created_at) }}</p>
                         </div>
                     </div>
+                </div>
 
+                <div class="row mb-5">
                     <div class="col-md">
-                        <div class="mb-7 bg-light p-5 rounded h-100 text-capitalize">
+                        <div class="mb-7 bg-light p-5 rounded h-100">
                             <div class="card-title">
-                                <h5 class="font-weight-bolder text-dark">{{ __('words.message') }}
+                                <h5 class="font-weight-bolder text-dark">{{ __('words.revenues') }}
                                     :</h5>
                             </div>
-                            {{ $consultation_request->message }}
+                            {{ $consultation_request->revenues }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mb-5">
+                    <div class="col-md">
+                        <div class="mb-7 bg-light p-5 rounded h-100">
+                            <div class="card-title">
+                                <h5 class="font-weight-bolder text-dark">{{ __('words.notes') }}
+                                    :</h5>
+                            </div>
+                            {{ $consultation_request->notes }}
                         </div>
                     </div>
                 </div>
             </div>
             @permission('reply-consultation_requests')
-                <div class="card-footer">
-                    <div class="row">
-                        <div class="col-4">
-                            <a href="{{ route('consultation_requests.reply', $consultation_request->id) }}"
-                                class="btn btn-block btn-outline-info">
-                                {{ __('words.reply') }}
-                            </a>
-                        </div>
+            <div class="card-footer">
+                <div class="row">
+                    <div class="col-4">
+                        <a href="{{ route('consultation_requests.reply', $consultation_request->id) }}"
+                           class="btn btn-block btn-outline-info">
+                            {{ __('words.reply') }}
+                        </a>
                     </div>
                 </div>
+            </div>
             @endpermission
         </div>
     </div>

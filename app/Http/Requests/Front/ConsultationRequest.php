@@ -14,12 +14,15 @@ class ConsultationRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|string|min:2|max:200',
+            'organization_name' => 'required|string|min:2|max:200',
             'email' => 'required|email',
             'service_id' => 'required|exists:services,id',
             'phone' => 'required|string|regex:/^([0-9\s\-\+\(\)]*)$/|min:6|max:30',
-            'message' => 'required|min:2|max:500',
-
+            'falling_facility' => 'required|in:company,organization',
+            'facility_have_financial' => 'required',
+            'financial_statements' => 'required|in:internal,audited',
+            'revenues' => 'required|min:2|max:500',
+            'notes' => 'nullable|min:2|max:500',
         ];
     }
 }

@@ -599,9 +599,9 @@
                                                                         <tr style="border-collapse:collapse">
                                                                             <td
                                                                                 style="padding:0;Margin:0;font-size:14px;line-height:21px;text-transform:capitalize">
-                                                                                <strong> {{ __('words.name') }}
+                                                                                <strong> {{ __('words.organization_name') }}
                                                                                     :
-                                                                                </strong>{{ $consultation_request->name }}
+                                                                                </strong>{{ $consultation_request->organization_name }}
                                                                             </td>
                                                                         </tr>
                                                                         <tr style="border-collapse:collapse">
@@ -623,6 +623,30 @@
                                                                         <tr style="border-collapse:collapse">
                                                                             <td
                                                                                 style="padding:0;Margin:0;font-size:14px;line-height:21px">
+                                                                                <strong>{{ __('words.falling_facility') }}
+                                                                                    :
+                                                                                </strong>{{ $consultation_request->falling_facility }}
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr style="border-collapse:collapse">
+                                                                            <td
+                                                                                style="padding:0;Margin:0;font-size:14px;line-height:21px">
+                                                                                <strong>{{ __('words.facility_have_financial') }}
+                                                                                    :
+                                                                                </strong>{{ $consultation_request->getFacilityHaveFinancial() }}
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr style="border-collapse:collapse">
+                                                                            <td
+                                                                                style="padding:0;Margin:0;font-size:14px;line-height:21px">
+                                                                                <strong>{{ __('words.financial_statements') }}
+                                                                                    :
+                                                                                </strong>{{ $consultation_request->financial_statements }}
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr style="border-collapse:collapse">
+                                                                            <td
+                                                                                style="padding:0;Margin:0;font-size:14px;line-height:21px">
                                                                                 <strong>{{ __('words.service') }}
                                                                                     :
                                                                                 </strong>{{ $consultation_request->service->title }}
@@ -631,9 +655,17 @@
                                                                         <tr style="border-collapse:collapse">
                                                                             <td
                                                                                 style="padding:0;Margin:0;font-size:14px;line-height:21px">
-                                                                                <strong>{{ __('words.message') }}
+                                                                                <strong>{{ __('words.revenues') }}
                                                                                     :
-                                                                                </strong><br />{{ $consultation_request->message }}
+                                                                                </strong><br />{{ $consultation_request->revenues }}
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr style="border-collapse:collapse">
+                                                                            <td
+                                                                                style="padding:0;Margin:0;font-size:14px;line-height:21px">
+                                                                                <strong>{{ __('words.notes') }}
+                                                                                    :
+                                                                                </strong><br />{{ $consultation_request->notes }}
                                                                             </td>
                                                                         </tr>
                                                                     </table>

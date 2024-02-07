@@ -56,8 +56,7 @@
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>{{ __('words.name') }}</th>
-                        {{-- <th>{{ __('words.message') }}</th> --}}
+                        <th>{{ __('words.organization_name') }}</th>
                         <th>{{ __('words.email') }}</th>
                         <th>{{ __('words.phone') }}</th>
                         <th>{{ __('words.created_at') }}</th>
@@ -68,10 +67,9 @@
                     @foreach ($consultation_requests as $key => $consultation_request)
                         <tr>
                             <td>{{ $key + 1 }}</td>
-                            <td class="text-capitalize">{{ $consultation_request->name }}</td>
-                            {{-- <td class="text-capitalize">{!! Str::limit($consultation_request->message, 200) !!}</td> --}}
-                            <td style="direction: ltr !important;text-align: left;">{{ $consultation_request->email }}</td>
-                            <td style="direction: ltr !important;text-align: left;">{{ $consultation_request->phone }}</td>
+                            <td>{{ $consultation_request->organization_name }}</td>
+                            <td style="direction: ltr !important;text-align: match-parent;">{{ $consultation_request->email }}</td>
+                            <td style="direction: ltr !important;text-align: match-parent;">{{ $consultation_request->phone }}</td>
                             <td>{{ formatDate($consultation_request->created_at) }}</td>
                             <td nowrap="nowrap">
                                 @include('admin.components.form-controls', [

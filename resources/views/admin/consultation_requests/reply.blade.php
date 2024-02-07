@@ -32,7 +32,7 @@
                 <div class="row w-100">
                     <div class="col-12 col-md-6 col-lg-12 col-xl-6 my-2 text-capitalize">
                         <span class="card-label">{{ __('words.reply_to') }} : </span>
-                        <span class="font-weight-light">{{ $consultation_request->name }}</span>
+                        <span class="font-weight-light">{{ $consultation_request->organization_name }}</span>
                     </div>
                     <div class='col-12 col-md-6 col-lg-12 col-xl-6 my-2'>
                         <span class="card-label">{{ __('words.email') }} : </span>

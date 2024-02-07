@@ -88,8 +88,8 @@ return [
     "export" => "Export",
     "read_more" => "Read More",
     "show_more" => "Show More",
-    "request_consultation" => "Free Consultation",
-    "request_consultation_now" => "Request Free Consultation Now",
+    "request_consultation" => "Mediation application form",
+    "request_consultation_now" => "Apply for Mediation Now",
     "our_feature" => "Our Features",
     "about_us" => "About us",
     "contact_info" => "Contact Info",
@@ -116,8 +116,6 @@ return [
     "consultation_request_from" => "Consultation request from: ",
 
 
-
-
     'reply_for_msg' => 'Reply For Contact Message',
     'reply_for_request' => 'Reply For Quotation Request Message',
 
@@ -128,7 +126,6 @@ return [
     'msg_reply' => 'Reply To Message Sent Successfully',
     'consultation_request_mail' => 'Consultation Request',
     'reply_consultation_msg' => 'In response to your consultation request',
-
 
 
     "quick_links" => "Quick Links",
@@ -363,5 +360,16 @@ return [
     "contact_email" => "Default sending and receiving contact emails",
     "newsletter_email" => "Default sending and receiving newsletter emails",
     "whatsapp" => "WhatsApp",
-
+    "organization_name" => "Organization Name",
+    "falling_facility" => "The legal entity of the facility",
+    "what_falling_facility" => "What is the legal entity of your facility?",
+    "facility_have_financial" => "Does the facility have financial statements?",
+    "does_facility_have_financial" => "Does your facility have financial statements (budgets)?",
+    "financial_statements" => "Financial statements (budgets)",
+    "revenues" => "Revenue (sales) in 2023",
+    "notes" => "Notes",
+    'company' => "Company",
+    'organization' => "Organization",
+    'internal' => 'Internal',
+    'audited' => 'Audited',
 ];

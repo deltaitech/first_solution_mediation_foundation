@@ -34,7 +34,7 @@ return [
         "numeric" => "يجب أن تكون قيمة حقل :attribute بين :min و :max.",
         "string" => "يجب أن يكون عدد حروف نّص حقل :attribute بين :min و :max.",
     ],
-    "boolean" => "يجب أن تكون قيمة حقل :attribute إما true أو false .",
+    "boolean" => "يجب أن تكون قيمة حقل :attribute إما نعم أو لا .",
     "confirmed" => "حقل التأكيد غير مُطابق للحقل :attribute.",
     "current_password" => "كلمة المرور غير صحيحة.",
     "date" => "حقل :attribute ليس تاريخًا صحيحًا.",
@@ -215,6 +215,20 @@ return [
         "social" => "رابط موقع تواصل إجتماعى",
         "link" => "الرابط",
         "video" => "الفيديو",
+        "organization_name" => "إسم المنشأة",
+        "falling_facility" => "الكيان القانوني للمنشأة",
+        "what_falling_facility" => "ما هو الكيان القانوني لمنشأتك؟",
+        "facility_have_financial" => "هل لدى المنشأة قوائم مالية؟",
+        "does_facility_have_financial" => "هل لدى منشأتك قوائم مالية (ميزانيات) ؟",
+        "financial_statements" => "القوائم المالية (الميزانيات)",
+        "revenues" => "الإيرادات (المبيعات) في 2023",
+        "notes" => "ملاحظات",
+        'company' => "شركة",
+        'organization' => "مؤسسة",
+        'internal' => 'داخلية',
+        'audited' => 'مدققة',
+        'true' => 'نعم',
+        'false' => 'لا',
 
         "ar" => [
             "title" => "العنوان باللغة العربية",
@@ -246,4 +260,5 @@ return [
         "images" => "الصور",
     ],
     "insurance_amount" => "الحد التأميني",
+
 ];
