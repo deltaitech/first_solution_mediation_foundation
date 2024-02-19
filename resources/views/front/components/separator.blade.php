@@ -1,5 +1,5 @@
 <!-- Start ui-block-15 -->
-<section class="bg-admission-img ui-block-15 quote"
+<section class="bg-admission-img ui-block-15 quote mb-5"
     style="background-image:url('{{ $separator->image }}');	background-size: auto !important;
     ">
     <div class="overlay-admission"></div>
