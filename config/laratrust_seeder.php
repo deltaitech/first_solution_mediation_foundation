@@ -5,7 +5,7 @@ return [
         "admins" => ["read", "create", "update", "delete", "updateProfile"],
         "sliders" => ["read", "create", "update", "delete"],
         "services" => ["read", "create", "update", "delete"],
-        "partners" => ["read", "create", "update", "delete"],
+//        "partners" => ["read", "create", "update", "delete"],
         "features" => ["read", "update", "delete"],
         "pages" => ["read", "update"],
         "contacts" => ["read", "create", "update", "delete"],
